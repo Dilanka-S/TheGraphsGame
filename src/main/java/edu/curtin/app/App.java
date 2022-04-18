@@ -1,5 +1,16 @@
 package edu.curtin.app;
 
+import edu.curtin.app.Model.*;
+import edu.curtin.app.Model.Borders.leftBotBorder;
+import edu.curtin.app.Model.Borders.leftTopBorder;
+import edu.curtin.app.Model.Borders.rightBotBorder;
+import edu.curtin.app.Model.Borders.rightTopBorder;
+import edu.curtin.app.Model.Doors.VerticalDoor;
+import edu.curtin.app.Model.Keys.Keys;
+import edu.curtin.app.Model.Map;
+import edu.curtin.app.Model.Walls.HorizontalWall;
+import edu.curtin.app.Model.Walls.VerticalWall;
+
 import java.util.*;
 import java.io.*;
 import java.util.logging.Logger;
@@ -16,8 +27,9 @@ public class App {
             System.out.println("+ -------------------- +");
             System.out.println("|       WELCOME TO     |");
             System.out.println("|          THE         |");
-            System.out.println("|\t    \033[31mMAZE \033[32mGAME!\033[m     |");
+            System.out.println("|       \033[31mMAZE \033[32mGAME!\033[m     |");
             System.out.println("+ -------------------- +\n");
+
             //Allowing the program to be tested with different files through the CLI
             Scanner sc = new Scanner(System.in);
             //String filename;
@@ -30,21 +42,10 @@ public class App {
             int actCols = (3*rowNum)+(rowNum+1);
             int actRows = ((2*colNum)+1);
             //System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
-            Map map = new Map(actRows,actCols);
+            edu.curtin.app.Model.Map map = new Map(actRows,actCols);
 
             //Putting borders
-            for (int i = 0; i < actCols; i++) {
-                map.setMap(0,i,new HorizontalWall());
-            }
-            for (int i = 0; i < actCols; i++) {
-                map.setMap(actRows-1,i,new HorizontalWall());
-            }
-            for (int i = 0; i < actRows; i++) {
-                map.setMap(i,0, new VerticalWall());
-            }
-            for (int i = 0; i < actRows; i++) {
-                map.setMap(i,actCols-1, new VerticalWall());
-            }
+            map = insertBorders(map,actCols,actRows);
 
             //System.out.println("\nrowNum is : "+rowNum+ "\tcolNum is : " +colNum);
             appLogger.info("Size of the map is : "+rowNum+ " x " +colNum);
@@ -103,6 +104,7 @@ public class App {
                         int xDV = Integer.parseInt(splitBy[1]);
                         int yDV = Integer.parseInt(splitBy[2]);
                         appLogger.info("Position of Vertical Door("+dvCount+") is : \n\tRow = "+xDV+" Column = "+yDV);
+                        map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new VerticalDoor());
                         break;
                     case "K" :
                         //System.out.println("K");
@@ -142,7 +144,7 @@ public class App {
             appLogger.info(" > Total number of Messages : "+mCount);
             appLogger.info(" > Total number of Keys : "+kCount);
 
-            System.out.println("\033[2J");
+            //System.out.println("\033[2J");
             System.out.println(map.display());
 
             while(true){
@@ -206,15 +208,30 @@ public class App {
     }
     private static int adjustColumn(int col, String type){
         int adjustedCol=0;
-        if(type.equals("WV")){
+        if((type.equals("WV") || (type.equals("DV")))){
             adjustedCol = col*4;
-        }else
-//        if(col==0){
-//            adjustedCol=0;
-//        }else
-        if(col>=0){
+        }else if(col>=0){
             adjustedCol = (4*col)+2;
         }
         return adjustedCol;
+    }
+    private static Map insertBorders(Map map,int actCols,int actRows){
+        for (int i = 0; i < actCols; i++) {
+            map.setMap(0,i,new HorizontalWall());
+        }
+        for (int i = 0; i < actCols; i++) {
+            map.setMap(actRows-1,i,new HorizontalWall());
+        }
+        for (int i = 0; i < actRows; i++) {
+            map.setMap(i,0, new VerticalWall());
+        }
+        for (int i = 0; i < actRows; i++) {
+            map.setMap(i,actCols-1, new VerticalWall());
+        }
+        map.setMap(0,0,new leftTopBorder());
+        map.setMap(0,actCols-1,new rightTopBorder());
+        map.setMap(actRows-1,0,new leftBotBorder());
+        map.setMap(actRows-1,actCols-1,new rightBotBorder());
+        return map;
     }
 }
