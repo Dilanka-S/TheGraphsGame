@@ -13,8 +13,8 @@ public class App {
         // will also need to update the 'mainClass = ...' line in build.gradle.
         try{
             //Welcome message
-            System.out.println("WELCOME TO THE MAZE GAME!");
-            //System.out.println("\033[31mHello \033[32mworld\033[m");
+            System.out.println("WELCOME TO THE");
+            System.out.println("\033[31mMAZE \033[32mGAME!\033[m");
             //Allowing the program to be tested with different files through the CLI
             Scanner sc = new Scanner(System.in);
             //String filename;
@@ -26,7 +26,7 @@ public class App {
             int colNum = fileScanner.nextInt();
             int actCols = (3*rowNum)+(rowNum+1);
             int actRows = ((2*colNum)+1);
-            System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
+            //System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
             Map map = new Map(actRows,actCols);
 
             //Putting borders
@@ -43,7 +43,7 @@ public class App {
                 map.setMap(i,actCols-1, new VerticalWall());
             }
 
-            System.out.println("\nrowNum is : "+rowNum+ "\tcolNum is : " +colNum);
+            //System.out.println("\nrowNum is : "+rowNum+ "\tcolNum is : " +colNum);
             appLogger.info("Size of the map is : "+rowNum+ " x " +colNum);
             fileScanner.nextLine();
 
@@ -141,6 +141,17 @@ public class App {
 
             System.out.println(map.display());
 
+            while(true){
+                System.out.println("Please entire your desired move or type 'exit' to close the game");
+                System.out.println("Action : ");
+                String input = sc.next();
+                if(input.equals("exit")){
+                    break;
+                }
+                map.move(input);
+                System.out.println("\033[2J");
+                System.out.println(map.display());
+            }
             //System.out.println("* while loop finished");
             fileScanner.close();
 //      }catch (NullPointerException exception){
