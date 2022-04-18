@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'pmd'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'edu.curtin.app.App'
+}
+
+tasks.run.configure {
+    standardInput = System.in
+    systemProperties['java.util.logging.config.file'] = 'logging.properties'
+}
+
+compileJava {
+    options.compilerArgs << '-Xlint:all,-serial'
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = '6.43.0'
+    rulesMinimumPriority = 5
+    ruleSets = []
+    ruleSetFiles = files('oose-pmd-rules.xml')
+}
