@@ -101,10 +101,14 @@ public class Map {
                 break;
             default:
                 System.err.println("Invalid move");
+                break;
 
         }
     }
     public Boolean winCondition(){
-
+        boolean win=false;
+        //simplified if condition with IntelliJ
+        win = (playerRow == endRow) && (playerColumn == endColumn);
+        return win;
     }
 }

@@ -1,81 +1,81 @@
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Size of the map is : 4 x 4
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Vertical Wall(1) is : 
 	Row = 0 Column = 1
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Vertical Wall(2) is : 
 	Row = 0 Column = 3
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Vertical Wall(3) is : 
 	Row = 1 Column = 2
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Vertical Wall(4) is : 
 	Row = 1 Column = 3
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Vertical Wall(5) is : 
 	Row = 2 Column = 1
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Vertical Wall(6) is : 
 	Row = 3 Column = 2
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Horizontal Wall(1) is : 
 	Row = 1 Column = 1
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Horizontal Wall(2) is : 
 	Row = 2 Column = 0
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Horizontal Wall(3) is : 
 	Row = 2 Column = 2
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Horizontal Wall(4) is : 
 	Row = 2 Column = 3
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Horizontal Wall(5) is : 
 	Row = 3 Column = 2
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: The Starting Position of the Player is : 
 	Row = 0 Column = 0
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Message(1) is : 
 	Row = 0 Column = 0
 	 
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Message(2) is : 
 	Row = 0 Column = 0
 	 
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of End Point(1) is : 
 	Row = 0 Column = 3
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Message(3) is : 
 	Row = 0 Column = 3
 	 
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Vertical Door(1) is : 
 	Row = 1 Column = 2
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Horizontal Door(1) is : 
 	Row = 2 Column = 3
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: The position of a Green color Key is : 
 	Row = 0 Column = 1
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: The position of a Red color Key is : 
 	Row = 2 Column = 0
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO: Position of Message(4) is : 
 	Row = 3 Column = 2
 	 
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO:  > Total number of Horizontal Walls : 5
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO:  > Total number of Vertical Walls : 6
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO:  > Total number of Horizontal Doors : 1
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO:  > Total number of Vertical Doors : 1
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO:  > Total number of Messages : 4
-Apr 18, 2022 6:00:05 PM edu.curtin.app.App main
+Apr 18, 2022 7:10:09 PM edu.curtin.app.App main
 INFO:  > Total number of Keys : 0

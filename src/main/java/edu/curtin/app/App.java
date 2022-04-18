@@ -122,7 +122,7 @@ public class App {
 //                        }
                         //if(Character.isDigit(line.charAt()))
                         appLogger.info("Position of Message("+mCount+") is : \n\tRow = "+xM+" Column = "+yM+"\n\t"+message);
-                        System.out.println(message);
+                        //System.out.println(message);
                         break;
                     default :
                         System.err.println("An input category that was not predefined has been entered." +
@@ -142,17 +142,31 @@ public class App {
             System.out.println(map.display());
 
             while(true){
-                System.out.println("Please entire your desired move or type 'exit' to close the game");
-                System.out.println("Action : ");
-                String input = sc.next();
-                if(input.equals("exit")){
+                if(map.winCondition()==true){
+                    System.out.println("\033[2J");
+                    System.out.println("\033[31mYOU WIN!!");
+                    System.out.println("\nThanks for playing the maze game.\nCreated By\t:\tD.V.Seneviratne" +
+                            "\nStudent ID\t:\t20529624 " +
+                            "\nInstitute\t:\tCurtin University/SLIIT International - Sri Lanka ");
                     break;
+                }else{
+                    System.out.println("Please entire your desired move or type 'exit' to close the game");
+                    System.out.println("Action : ");
+                    String input = sc.next();
+                    if(input.equals("exit")){
+                        System.out.println("\nThanks for playing the maze game.\nCreated By\t:\tD.V.Seneviratne" +
+                                "\nStudent ID\t:\t20529624 " +
+                                "\nInstitute\t:\tCurtin University/SLIIT International - Sri Lanka ");
+                        break;
+                    }
+                    map.move(input);
+                    System.out.println("\033[2J");
+                    System.out.println(map.display());
                 }
-                map.move(input);
-                System.out.println("\033[2J");
-                System.out.println(map.display());
+
             }
             //System.out.println("* while loop finished");
+            sc.close();
             fileScanner.close();
 //      }catch (NullPointerException exception){
 //            System.err.println("An error has occurred : " +exception.getMessage());
