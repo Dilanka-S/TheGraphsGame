@@ -55,7 +55,7 @@ public class App {
                 //System.out.println(line);
                 switch(splitBy[0]){
                     case "WV" :
-                        System.out.println("WV");
+                        //System.out.println("WV");
                         wvCount++;
                         int xWV = Integer.parseInt(splitBy[1]);
                         int yWV = Integer.parseInt(splitBy[2]);
@@ -63,22 +63,24 @@ public class App {
                         map.setMap(adjustRow(xWV,"WV"),adjustColumn(yWV,"WV"), new VerticalWall());
                         break;
                     case "WH" :
-                        System.out.println("WH");
+                        //System.out.println("WH");
                         whCount++;
                         int xWH = Integer.parseInt(splitBy[1]);
                         int yWH = Integer.parseInt(splitBy[2]);
                         appLogger.info("Position of Horizontal Wall("+whCount+") is : \n\tRow = "+xWH+" Column = "+yWH);
+                        map.setMap(adjustRow(xWH,"WH"),(adjustColumn(yWH,"WH")-1), new HorizontalWall());
                         map.setMap(adjustRow(xWH,"WH"),adjustColumn(yWH,"WH"), new HorizontalWall());
+                        map.setMap(adjustRow(xWH,"WH"),(adjustColumn(yWH,"WH")+1), new HorizontalWall());
                         break;
                     case "S" :
-                        System.out.println("S");
+                        //System.out.println("S");
                         int xS = Integer.parseInt(splitBy[1]);
                         int yS = Integer.parseInt(splitBy[2]);
                         appLogger.info("The Starting Position of the Player is : \n\tRow = "+xS+" Column = "+yS);
                         map.setMap(adjustRow(xS,"S"),adjustColumn(yS,"S"), new Player());
                         break;
                     case "E" :
-                        System.out.println("E");
+                        //System.out.println("E");
                         eCount++;
                         int xE = Integer.parseInt(splitBy[1]);
                         int yE = Integer.parseInt(splitBy[2]);
@@ -86,21 +88,21 @@ public class App {
                         map.setMap(adjustRow(xE,"E"),adjustColumn(yE,"E"), new End());
                         break;
                     case "DH" :
-                        System.out.println("DH");
+                        //System.out.println("DH");
                         dhCount++;
                         int xDH = Integer.parseInt(splitBy[1]);
                         int yDH = Integer.parseInt(splitBy[2]);
                         appLogger.info("Position of Horizontal Door("+dhCount+") is : \n\tRow = "+xDH+" Column = "+yDH);
                         break;
                     case "DV" :
-                        System.out.println("DV");
+                        //System.out.println("DV");
                         dvCount++;
                         int xDV = Integer.parseInt(splitBy[1]);
                         int yDV = Integer.parseInt(splitBy[2]);
                         appLogger.info("Position of Vertical Door("+dvCount+") is : \n\tRow = "+xDV+" Column = "+yDV);
                         break;
                     case "K" :
-                        System.out.println("K");
+                        //System.out.println("K");
                         int xK = Integer.parseInt(splitBy[1]);
                         int yK = Integer.parseInt(splitBy[2]);
                         String keyColor = keyColorFinder(Integer.parseInt(splitBy[3]));
@@ -109,7 +111,7 @@ public class App {
                         break;
                     case "M" :
                         mCount++;
-                        System.out.println("M");
+                        //System.out.println("M");
                         int xM = Integer.parseInt(splitBy[1]);
                         int yM = Integer.parseInt(splitBy[2]);
 

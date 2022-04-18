@@ -55,12 +55,25 @@ public class Map {
                 if(playerRow==0){
                     System.out.println("Player has moved outside map");
                 }
-                if(map[playerRow-1][playerColumn] instanceof VerticalWall){
+                if(map[playerRow-2][playerColumn] instanceof VerticalWall){
+                    System.out.println("Player has hit a wall");
+                }
+                map[playerRow-2][playerColumn] = map[playerRow][playerColumn];
+                map[playerRow][playerColumn] = null;
+                logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow-1, playerColumn));
+                playerRow = playerRow-2;
+                break;
+            case 's' :
+                if(playerRow==0){
+                    System.out.println("Player has moved outside map");
+                }
+                if(map[playerRow+2][playerColumn] instanceof VerticalWall){
                     System.out.println("Player has hit a wall");
                 }
                 break;
             default:
                 System.err.println("Invalid move");
+
         }
     }
 }
