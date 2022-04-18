@@ -5,6 +5,7 @@ import edu.curtin.app.Model.Borders.leftBotBorder;
 import edu.curtin.app.Model.Borders.leftTopBorder;
 import edu.curtin.app.Model.Borders.rightBotBorder;
 import edu.curtin.app.Model.Borders.rightTopBorder;
+import edu.curtin.app.Model.Doors.HorizontalDoor;
 import edu.curtin.app.Model.Doors.VerticalDoor;
 import edu.curtin.app.Model.Keys.Keys;
 import edu.curtin.app.Model.Map;
@@ -97,6 +98,9 @@ public class App {
                         int xDH = Integer.parseInt(splitBy[1]);
                         int yDH = Integer.parseInt(splitBy[2]);
                         appLogger.info("Position of Horizontal Door("+dhCount+") is : \n\tRow = "+xDH+" Column = "+yDH);
+                        map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new HorizontalDoor());
+                        map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new HorizontalDoor());
+                        map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new HorizontalDoor());
                         break;
                     case "DV" :
                         //System.out.println("DV");
@@ -111,7 +115,7 @@ public class App {
                         int xK = Integer.parseInt(splitBy[1]);
                         int yK = Integer.parseInt(splitBy[2]);
                         String keyColor = keyColorFinder(Integer.parseInt(splitBy[3]));
-                        appLogger.info("The position of a "+keyColor+" color Key is : \n\tRow = "+xK+" Column = "+yK);
+                        appLogger.info("The position of a "+keyColor+" color Key is![](../../../../../../../../../../../../Desktop/Screenshot 2022-04-18 at 21.04.10.png) : \n\tRow = "+xK+" Column = "+yK);
                         map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new Keys());
                         break;
                     case "M" :
@@ -195,15 +199,18 @@ public class App {
     }
     private static int adjustRow(int row,String type){
         int adjustedRow=0;
-        if(type.equals("WH")){
+        if(type.equals("WH") || (type.equals("DH"))){
+            adjustedRow = (2*row);
+        }else if(type.equals("WV") || (type.equals("DV"))) {
             adjustedRow = (2*row)+1;
-        }else{
-            if(row==0){
-                adjustedRow=1;
-            }else if(row>0){
-                adjustedRow = row + 2;
-            }
+        } else{
+                if(row==0){
+                    adjustedRow=1;
+                }else if(row>0){
+                    adjustedRow = row + 3;
+                }
         }
+
         return adjustedRow;
     }
     private static int adjustColumn(int col, String type){
