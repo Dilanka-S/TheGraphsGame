@@ -46,7 +46,7 @@ public class App {
             edu.curtin.app.Model.Map map = new Map(actRows,actCols);
 
             //Putting borders
-            map = insertBorders(map,actCols,actRows);
+            //map = insertBorders(map,actCols,actRows);
 
             //System.out.println("\nrowNum is : "+rowNum+ "\tcolNum is : " +colNum);
             appLogger.info("Size of the map is : "+rowNum+ " x " +colNum);
@@ -149,6 +149,7 @@ public class App {
             appLogger.info(" > Total number of Keys : "+kCount);
 
             //System.out.println("\033[2J");
+            map = insertBorders(map,actCols,actRows);
             System.out.println(map.display());
 
             while(true){
@@ -239,6 +240,8 @@ public class App {
         map.setMap(0,actCols-1,new rightTopBorder());
         map.setMap(actRows-1,0,new leftBotBorder());
         map.setMap(actRows-1,actCols-1,new rightBotBorder());
+        map.setIntersections(actRows,actCols);
+
         return map;
     }
 }

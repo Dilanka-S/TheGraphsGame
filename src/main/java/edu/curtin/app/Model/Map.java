@@ -1,5 +1,10 @@
 package edu.curtin.app.Model;
 
+import edu.curtin.app.Model.Borders.botIntersection;
+import edu.curtin.app.Model.Borders.leftIntersection;
+import edu.curtin.app.Model.Borders.rightIntersection;
+import edu.curtin.app.Model.Borders.topIntersection;
+import edu.curtin.app.Model.Walls.HorizontalWall;
 import edu.curtin.app.Model.Walls.VerticalWall;
 
 import java.util.logging.Logger;
@@ -24,6 +29,25 @@ public class Map {
         }else if (cellObj instanceof End){
             endRow = x;
             endColumn = y;
+        }
+    }
+    public void setIntersections(int actualRows,int actualCols){
+        for (int i = 4; i < actualCols-1 ; i+=4) {
+            if(map[1][i] instanceof VerticalWall){
+                setMap(0,i,new topIntersection());
+            }
+            if(map[actualRows-2][i] instanceof VerticalWall){
+                setMap(actualRows-1,i, new botIntersection());
+            }
+        }
+        for (int i = 2; i < actualRows-1; i+=2) {
+            if(map[i][1] instanceof HorizontalWall){
+                setMap(i,0, new leftIntersection());
+                //System.out.println("Left Intersection");
+            }
+            if(map[i][actualRows-2] instanceof HorizontalWall){
+                setMap(i,actualRows-1, new rightIntersection());
+            }
         }
     }
    // @Override
@@ -104,4 +128,5 @@ public class Map {
         win = (playerRow == endRow) && (playerColumn == endColumn);
         return win;
     }
+
 }
