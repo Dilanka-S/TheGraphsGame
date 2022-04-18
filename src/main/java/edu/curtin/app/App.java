@@ -115,7 +115,7 @@ public class App {
                         int xK = Integer.parseInt(splitBy[1]);
                         int yK = Integer.parseInt(splitBy[2]);
                         String keyColor = keyColorFinder(Integer.parseInt(splitBy[3]));
-                        appLogger.info("The position of a "+keyColor+" color Key is![](../../../../../../../../../../../../Desktop/Screenshot 2022-04-18 at 21.04.10.png) : \n\tRow = "+xK+" Column = "+yK);
+                        appLogger.info("The position of a "+keyColor+" color Key is : \n\tRow = "+xK+" Column = "+yK);
                         map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new Keys());
                         break;
                     case "M" :
