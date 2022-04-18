@@ -13,8 +13,11 @@ public class App {
         // will also need to update the 'mainClass = ...' line in build.gradle.
         try{
             //Welcome message
-            System.out.println("WELCOME TO THE");
-            System.out.println("\033[31mMAZE \033[32mGAME!\033[m");
+            System.out.println("+ -------------------- +");
+            System.out.println("|       WELCOME TO     |");
+            System.out.println("|          THE         |");
+            System.out.println("|\t    \033[31mMAZE \033[32mGAME!\033[m     |");
+            System.out.println("+ -------------------- +\n");
             //Allowing the program to be tested with different files through the CLI
             Scanner sc = new Scanner(System.in);
             //String filename;
@@ -139,19 +142,20 @@ public class App {
             appLogger.info(" > Total number of Messages : "+mCount);
             appLogger.info(" > Total number of Keys : "+kCount);
 
+            System.out.println("\033[2J");
             System.out.println(map.display());
 
             while(true){
                 if(map.winCondition()==true){
                     System.out.println("\033[2J");
-                    System.out.println("\033[31mYOU WIN!!");
+                    System.out.println("\t\t\033[31mYOU W0N!");
                     System.out.println("\nThanks for playing the maze game.\nCreated By\t:\tD.V.Seneviratne" +
                             "\nStudent ID\t:\t20529624 " +
                             "\nInstitute\t:\tCurtin University/SLIIT International - Sri Lanka ");
                     break;
                 }else{
                     System.out.println("Please entire your desired move or type 'exit' to close the game");
-                    System.out.println("Action : ");
+                    System.out.print("Action : ");
                     String input = sc.next();
                     if(input.equals("exit")){
                         System.out.println("\nThanks for playing the maze game.\nCreated By\t:\tD.V.Seneviratne" +
