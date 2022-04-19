@@ -9,6 +9,7 @@ import edu.curtin.app.Model.Borders.rightTopBorder;
 import edu.curtin.app.Model.Doors.HorizontalDoor;
 import edu.curtin.app.Model.Doors.HorizontalDoors.*;
 import edu.curtin.app.Model.Doors.VerticalDoor;
+import edu.curtin.app.Model.Doors.VerticalDoors.*;
 import edu.curtin.app.Model.Keys.*;
 import edu.curtin.app.Model.Map;
 import edu.curtin.app.Model.Walls.HorizontalWall;
@@ -243,7 +244,31 @@ public class App {
                         int xDV = Integer.parseInt(splitBy[1]);
                         int yDV = Integer.parseInt(splitBy[2]);
                         appLogger.info("Position of Vertical Door("+dvCount+") is : \n\tRow = "+xDV+" Column = "+yDV);
-                        map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new VerticalDoor());
+                        //map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new VerticalDoor());
+                        switch (Integer.parseInt(splitBy[3])){
+                            case 1 :
+                                map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new RedVD());
+                                break;
+                            case 2 :
+                                map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new GreenVD());
+                                break;
+                            case 3 :
+                                map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new YellowVD());
+                                break;
+                            case 4 :
+                                map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new BlueVD());
+                                break;
+                            case 5 :
+                                map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new MagentaVD());
+                                break;
+                            case 6 :
+                                map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new CyanVD());
+                                break;
+                            default :
+                                map.setMap(adjustRow(xDV,"DV"),adjustColumn(yDV,"DV"), new VerticalDoor());
+                                //System.err.println("Incorrect key type entered");
+                                break;
+                        }
                         break;
                     case "K" :
                         //System.out.println("K");

@@ -11,14 +11,18 @@ import edu.curtin.app.Model.Keys.Keys;
 import edu.curtin.app.Model.Walls.HorizontalWall;
 import edu.curtin.app.Model.Walls.VerticalWall;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class Map {
     public Cell[][] map;
-    private int playerRow, playerColumn, endColumn, endRow,actualRows,actualCols;
-    private static Logger logger = Logger.getLogger(Map.class.getName());
-
-    //public final static char North = 'n';
+    private int playerRow;
+    private int playerColumn;
+    private int endColumn;
+    private int endRow;
+    private final int actualRows;
+    private final int actualCols;
+    private static final Logger logger = Logger.getLogger(Map.class.getName());
 
     public Map(int rows, int cols){
         map = new Cell[rows][cols];
@@ -63,7 +67,7 @@ public class Map {
                 if(map[i][j]==null){
                     builder.append(" ");
                 }else{
-                    builder.append("").append(map[i][j]).append("");
+                    builder.append(map[i][j]);
                 }
             }
             builder.append("\n");
@@ -80,10 +84,11 @@ public class Map {
                         throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
                     }else if(map[playerRow-2][playerColumn] instanceof Keys){
                         System.out.println("You have obtained a key");
+                        logger.info("Player has obtained a key at ["+(playerRow-2)+","+playerColumn+"]");
                     }
                     map[playerRow-2][playerColumn] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
-                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow-1, playerColumn));
+                    logger.info("Player has moved NORTH from ["+playerRow+","+playerColumn+"] to ["+(playerRow-2)+","+playerColumn+"]");
                     playerRow = playerRow-2;
                     break;
                 case "s" :
@@ -93,10 +98,12 @@ public class Map {
                         throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
                     } else if(map[playerRow+2][playerColumn] instanceof Keys){
                         System.out.println("You have obtained a key");
+                        logger.info("Player has obtained a key at ["+(playerRow+2)+","+playerColumn+"]");
+
                     }
                     map[playerRow+2][playerColumn] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
-                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow+1, playerColumn));
+                    logger.info("Player has moved SOUTH from ["+playerRow+","+playerColumn+"] to ["+(playerRow+2)+","+playerColumn+"]");
                     playerRow = playerRow+2;
                     break;
                 case "w" :
@@ -106,10 +113,12 @@ public class Map {
                         throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
                     } else if(map[playerRow][playerColumn-4] instanceof Keys){
                         System.out.println("You have obtained a key");
+                        logger.info("Player has obtained a key at ["+playerRow+","+(playerColumn-4)+"]");
+
                     }
                     map[playerRow][playerColumn-4] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
-                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow, playerColumn-1));
+                    logger.info("Player has moved WEST from ["+playerRow+","+playerColumn+"] to ["+playerRow+","+(playerColumn-4)+"]");
                     playerColumn = playerColumn-4;
                     break;
                 case "e" :
@@ -119,10 +128,12 @@ public class Map {
                         throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
                     } else if(map[playerRow][playerColumn+4] instanceof Keys){
                         System.out.println("You have obtained a key");
+                        logger.info("Player has obtained a key at ["+playerRow+","+(playerColumn+4)+"]");
+
                     }
                     map[playerRow][playerColumn+4] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
-                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow, playerColumn)+1);
+                    logger.info("Player has moved EAST from ["+playerRow+","+playerColumn+"] to ["+playerRow+","+(playerColumn+4)+"]");
                     playerColumn = playerColumn+4;
                     break;
                 default:
@@ -142,5 +153,11 @@ public class Map {
         win = (playerRow == endRow) && (playerColumn == endColumn);
         return win;
     }
+    public ArrayList<String> keysList(String key){
+        ArrayList<String> keyList = new ArrayList<>();
+        keyList.add(key);
+        return keyList;
+    }
+
 
 }
