@@ -1,5 +1,6 @@
 package edu.curtin.app;
 
+import edu.curtin.app.Exceptions.MazeException;
 import edu.curtin.app.Model.*;
 import edu.curtin.app.Model.Borders.leftBotBorder;
 import edu.curtin.app.Model.Borders.leftTopBorder;
@@ -57,7 +58,7 @@ public class App {
 
             }
 
-        }catch (Exception mainExceptions){
+        } catch (Exception mainExceptions){
             System.err.println("An error has occurred when running the game : "+mainExceptions.getMessage());
         }
         //System.out.println("Hello world");
@@ -217,7 +218,7 @@ public class App {
                         int xK = Integer.parseInt(splitBy[1]);
                         int yK = Integer.parseInt(splitBy[2]);
                         String keyColor = keyColorFinder(Integer.parseInt(splitBy[3]));
-                        appLogger.info("The position of a "+keyColor+" color Key is : \n\tRow = "+xK+" Column = "+yK);
+                        appLogger.info("The position of added "+keyColor+" color Key is : \n\tRow = "+xK+" Column = "+yK);
                         switch (Integer.parseInt(splitBy[3])){
                             case 1 :
                                 map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new RedKey());
@@ -236,8 +237,10 @@ public class App {
                                 break;
                             case 6 :
                                 map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new CyanKey());
+                                break;
                             default :
                                 map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new Keys());
+                                //System.err.println("Incorrect key type entered");
                                 break;
                         }
                         break;
@@ -301,7 +304,10 @@ public class App {
 //      }catch (NullPointerException exception){
 //            System.err.println("An error has occurred : " +exception.getMessage());
 
-        }catch(Exception e){
+        }catch (MazeException mazeException){
+            System.err.println(mazeException.getMessage());
+        }
+        catch(Exception e){
             System.err.println("An error has occurred : "+e.getMessage());
         }
     }
