@@ -19,10 +19,6 @@ import java.util.logging.Logger;
 public class App {
     private static Logger appLogger = Logger.getLogger(App.class.getName());
     public static void main(String[] args) {
-        //System.out.println("Hello world");
-
-        // If you wish to change the name and/or package of the class containing 'main()', you
-        // will also need to update the 'mainClass = ...' line in build.gradle.
         try{
             //Welcome message
             System.out.println("+ -------------------- +");
@@ -32,6 +28,112 @@ public class App {
             System.out.println("+ -------------------- +\n");
 
             //Allowing the program to be tested with different files through the CLI
+            Scanner sc = new Scanner(System.in);
+            boolean menuBool = true;
+            while(menuBool==true){
+                System.out.println("""
+                        Kindly choose one of the below menu options
+                        \t1. Instructions
+                        \t2. Play the Maze Game
+                        \t3. Exit""");
+                System.out.print("Your selection : ");
+                int menuSelection = sc.nextInt();
+                switch (menuSelection){
+                    case 1 :
+                        instructionsBanner();
+                        break;
+                    case 2 :
+                        playGame();
+                        menuBool = false;
+                        break;
+                    case 3 :
+                        exitBanner();
+                        menuBool = false;
+                        break;
+                    default:
+                        System.err.println("Incorrect Menu Selection");
+                        break;
+                }
+
+            }
+
+        }catch (Exception mainExceptions){
+            System.err.println("An error has occurred when running the game : "+mainExceptions.getMessage());
+        }
+        //System.out.println("Hello world");
+
+        // If you wish to change the name and/or package of the class containing 'main()', you
+        // will also need to update the 'mainClass = ...' line in build.gradle.
+
+    }
+    private static String keyColorFinder(int colorCode){
+        //An enhanced switch case suggested by IntelliJ
+        return switch (colorCode) {
+            case 1 -> "Red";
+            case 2 -> "Green";
+            case 3 -> "Yellow";
+            case 4 -> "Blue";
+            case 5 -> "Magenta";
+            case 6 -> "Cyan";
+            default -> null;
+        };
+    }
+    private static int adjustRow(int row,String type){
+        int adjustedRow=0;
+        if(type.equals("WH") || (type.equals("DH"))){
+            adjustedRow = (2*row);
+        }else if(type.equals("WV") || (type.equals("DV"))) {
+            adjustedRow = (2*row)+1;
+        } else{
+                if(row==0){
+                    adjustedRow=1;
+                }else if(row>0){
+                    adjustedRow = row + 3;
+                }
+        }
+
+        return adjustedRow;
+    }
+    private static int adjustColumn(int col, String type){
+        int adjustedCol=0;
+        if((type.equals("WV") || (type.equals("DV")))){
+            adjustedCol = col*4;
+        }else if(col>=0){
+            adjustedCol = (4*col)+2;
+        }
+        return adjustedCol;
+    }
+    private static Map insertBorders(Map map,int actCols,int actRows){
+        for (int i = 0; i < actCols; i++) {
+            map.setMap(0,i,new HorizontalWall());
+        }
+        for (int i = 0; i < actCols; i++) {
+            map.setMap(actRows-1,i,new HorizontalWall());
+        }
+        for (int i = 0; i < actRows; i++) {
+            map.setMap(i,0, new VerticalWall());
+        }
+        for (int i = 0; i < actRows; i++) {
+            map.setMap(i,actCols-1, new VerticalWall());
+        }
+        map.setMap(0,0,new leftTopBorder());
+        map.setMap(0,actCols-1,new rightTopBorder());
+        map.setMap(actRows-1,0,new leftBotBorder());
+        map.setMap(actRows-1,actCols-1,new rightBotBorder());
+        map.setIntersections(actRows,actCols);
+
+        return map;
+    }
+    private static void exitBanner(){
+        System.out.println("""
+
+                Thanks for playing the maze game.
+                Created By\t:\tD.V.Seneviratne
+                Student ID\t:\t20529624\s
+                Institute\t:\tCurtin University/SLIIT International - Sri Lanka\s""");
+    }
+    public static void playGame(){
+        try{
             Scanner sc = new Scanner(System.in);
             //String filename;
 //            System.out.print("\n> Please enter the name of the metadata file for the map : ");
@@ -186,62 +288,19 @@ public class App {
             System.err.println("An error has occurred : "+e.getMessage());
         }
     }
-    private static String keyColorFinder(int colorCode){
-        //An enhanced switch case suggested by IntelliJ
-        return switch (colorCode) {
-            case 1 -> "Red";
-            case 2 -> "Green";
-            case 3 -> "Yellow";
-            case 4 -> "Blue";
-            case 5 -> "Magenta";
-            case 6 -> "Cyan";
-            default -> null;
-        };
-    }
-    private static int adjustRow(int row,String type){
-        int adjustedRow=0;
-        if(type.equals("WH") || (type.equals("DH"))){
-            adjustedRow = (2*row);
-        }else if(type.equals("WV") || (type.equals("DV"))) {
-            adjustedRow = (2*row)+1;
-        } else{
-                if(row==0){
-                    adjustedRow=1;
-                }else if(row>0){
-                    adjustedRow = row + 3;
-                }
-        }
+    private static void instructionsBanner(){
+        System.out.println("\033[2J");
+        System.out.println("""
+                The following are the controls to move the '(P)layer' position in the map
+                \t'n'\t-\t To move NORTH (up)
+                \t's'\t-\t To move SOUTH (down)
+                \t'e'\t-\t To move EAST (left)
+                \t'n'\t-\t To move WEST (right)""");
+        System.out.println("Here is the Legend for the map" +
+                "\n\tP\t-\t Player's current location" +
+                "\n\tE\t-\t END/win location(s)"+
+                "\n\t\u2555\t-\t Keys necessary to open the corresponding color door" +
+                "\n\t\u2592\t-\t Horizontal door that can be opened with the corresponding color key");
 
-        return adjustedRow;
-    }
-    private static int adjustColumn(int col, String type){
-        int adjustedCol=0;
-        if((type.equals("WV") || (type.equals("DV")))){
-            adjustedCol = col*4;
-        }else if(col>=0){
-            adjustedCol = (4*col)+2;
-        }
-        return adjustedCol;
-    }
-    private static Map insertBorders(Map map,int actCols,int actRows){
-        for (int i = 0; i < actCols; i++) {
-            map.setMap(0,i,new HorizontalWall());
-        }
-        for (int i = 0; i < actCols; i++) {
-            map.setMap(actRows-1,i,new HorizontalWall());
-        }
-        for (int i = 0; i < actRows; i++) {
-            map.setMap(i,0, new VerticalWall());
-        }
-        for (int i = 0; i < actRows; i++) {
-            map.setMap(i,actCols-1, new VerticalWall());
-        }
-        map.setMap(0,0,new leftTopBorder());
-        map.setMap(0,actCols-1,new rightTopBorder());
-        map.setMap(actRows-1,0,new leftBotBorder());
-        map.setMap(actRows-1,actCols-1,new rightBotBorder());
-        map.setIntersections(actRows,actCols);
-
-        return map;
     }
 }
