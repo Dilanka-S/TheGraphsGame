@@ -7,6 +7,7 @@ import edu.curtin.app.Model.Borders.leftTopBorder;
 import edu.curtin.app.Model.Borders.rightBotBorder;
 import edu.curtin.app.Model.Borders.rightTopBorder;
 import edu.curtin.app.Model.Doors.HorizontalDoor;
+import edu.curtin.app.Model.Doors.HorizontalDoors.*;
 import edu.curtin.app.Model.Doors.VerticalDoor;
 import edu.curtin.app.Model.Keys.*;
 import edu.curtin.app.Model.Map;
@@ -198,9 +199,43 @@ public class App {
                         int xDH = Integer.parseInt(splitBy[1]);
                         int yDH = Integer.parseInt(splitBy[2]);
                         appLogger.info("Position of Horizontal Door("+dhCount+") is : \n\tRow = "+xDH+" Column = "+yDH);
-                        map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new HorizontalDoor());
-                        map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new HorizontalDoor());
-                        map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new HorizontalDoor());
+                        switch (Integer.parseInt(splitBy[3])){
+                            case 1 :
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new RedHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new RedHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new RedHD());
+                                break;
+                            case 2 :
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new GreenHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new GreenHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new GreenHD());
+                                break;
+                            case 3 :
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new YellowHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new YellowHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new YellowHD());
+                                break;
+                            case 4 :
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new BlueHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new BlueHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new BlueHD());
+                                break;
+                            case 5 :
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new MagentaKey());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new MagentaKey());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new MagentaKey());
+                                break;
+                            case 6 :
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new CyanHD());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new CyanKey());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new CyanHD());
+                                break;
+                            default :
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")-1, new HorizontalDoor());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH"), new HorizontalDoor());
+                                map.setMap(adjustRow(xDH,"DH"),adjustColumn(yDH,"DH")+1, new HorizontalDoor());
+                                break;
+                        }
                         break;
                     case "DV" :
                         //System.out.println("DV");

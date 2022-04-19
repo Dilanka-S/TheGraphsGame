@@ -2,6 +2,7 @@ package edu.curtin.app.Model;
 
 import edu.curtin.app.Exceptions.HitHorizontalWall;
 import edu.curtin.app.Exceptions.HitVerticalWall;
+import edu.curtin.app.Exceptions.MazeException;
 import edu.curtin.app.Model.Borders.botIntersection;
 import edu.curtin.app.Model.Borders.leftIntersection;
 import edu.curtin.app.Model.Borders.rightIntersection;
@@ -70,63 +71,69 @@ public class Map {
         return builder.toString();
     }
     public void move(String input) throws HitVerticalWall, HitHorizontalWall {
-        switch (input){
-            case "n" :
-                if(playerRow==0){
-                    System.out.println("Player has moved outside map");
-                }else if(map[playerRow-1][playerColumn] instanceof HorizontalWall){
-                    throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
-                }else if(map[playerRow-2][playerColumn] instanceof Keys){
-                    System.out.println("You have obtained a key");
-                }
-                map[playerRow-2][playerColumn] = map[playerRow][playerColumn];
-                map[playerRow][playerColumn] = null;
-                logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow-1, playerColumn));
-                playerRow = playerRow-2;
-                break;
-            case "s" :
-                if(playerRow==0){
-                    System.out.println("Player has moved outside map");
-                } else if(map[playerRow+1][playerColumn] instanceof HorizontalWall){
-                    throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
-                } else if(map[playerRow+2][playerColumn] instanceof Keys){
-                    System.out.println("You have obtained a key");
-                }
-                map[playerRow+2][playerColumn] = map[playerRow][playerColumn];
-                map[playerRow][playerColumn] = null;
-                logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow+1, playerColumn));
-                playerRow = playerRow+2;
-                break;
-            case "e" :
-                if(playerRow==0){
-                    System.out.println("Player has moved outside map");
-                } else if(map[playerRow][playerColumn-2] instanceof VerticalWall){
-                    throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
-                } else if(map[playerRow][playerColumn-4] instanceof Keys){
-                    System.out.println("You have obtained a key");
-                }
-                map[playerRow][playerColumn-4] = map[playerRow][playerColumn];
-                map[playerRow][playerColumn] = null;
-                logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow, playerColumn-1));
-                playerColumn = playerColumn-4;
-                break;
-            case "w" :
-                if(playerRow==0){
-                    System.out.println("Player has moved outside map");
-                } else if(map[playerRow][playerColumn+2] instanceof VerticalWall){
-                    throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
-                } else if(map[playerRow][playerColumn-4] instanceof Keys){
-                System.out.println("You have obtained a key");
-                }
-                map[playerRow][playerColumn+4] = map[playerRow][playerColumn];
-                map[playerRow][playerColumn] = null;
-                logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow, playerColumn)+1);
-                playerColumn = playerColumn+4;
-                break;
-            default:
-                System.err.println("Invalid move");
-                break;
+        try{
+            switch (input){
+                case "n" :
+                    if(playerRow==0){
+                        System.out.println("Player has moved outside map");
+                    }else if(map[playerRow-1][playerColumn] instanceof HorizontalWall){
+                        throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
+                    }else if(map[playerRow-2][playerColumn] instanceof Keys){
+                        System.out.println("You have obtained a key");
+                    }
+                    map[playerRow-2][playerColumn] = map[playerRow][playerColumn];
+                    map[playerRow][playerColumn] = null;
+                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow-1, playerColumn));
+                    playerRow = playerRow-2;
+                    break;
+                case "s" :
+                    if(playerRow==0){
+                        System.out.println("Player has moved outside map");
+                    } else if(map[playerRow+1][playerColumn] instanceof HorizontalWall){
+                        throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
+                    } else if(map[playerRow+2][playerColumn] instanceof Keys){
+                        System.out.println("You have obtained a key");
+                    }
+                    map[playerRow+2][playerColumn] = map[playerRow][playerColumn];
+                    map[playerRow][playerColumn] = null;
+                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow+1, playerColumn));
+                    playerRow = playerRow+2;
+                    break;
+                case "w" :
+                    if(playerRow==0){
+                        System.out.println("Player has moved outside map");
+                    } else if(map[playerRow][playerColumn-2] instanceof VerticalWall){
+                        throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
+                    } else if(map[playerRow][playerColumn-4] instanceof Keys){
+                        System.out.println("You have obtained a key");
+                    }
+                    map[playerRow][playerColumn-4] = map[playerRow][playerColumn];
+                    map[playerRow][playerColumn] = null;
+                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow, playerColumn-1));
+                    playerColumn = playerColumn-4;
+                    break;
+                case "e" :
+                    if(playerRow==0){
+                        System.out.println("Player has moved outside map");
+                    } else if(map[playerRow][playerColumn+2] instanceof VerticalWall){
+                        throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
+                    } else if(map[playerRow][playerColumn+4] instanceof Keys){
+                        System.out.println("You have obtained a key");
+                    }
+                    map[playerRow][playerColumn+4] = map[playerRow][playerColumn];
+                    map[playerRow][playerColumn] = null;
+                    logger.info(String.format("Player moved from (%d,%d) to (%d,%d)", playerRow, playerColumn, playerRow, playerColumn)+1);
+                    playerColumn = playerColumn+4;
+                    break;
+                default:
+                    System.err.println("Invalid move");
+                    break;
 
+            }
+
+
+        }catch (MazeException mazeException){
+            System.out.println("Invalid move : "+mazeException.getMessage());
         }
     }
     public Boolean winCondition(){
