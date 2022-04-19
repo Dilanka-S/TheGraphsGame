@@ -7,7 +7,7 @@ import edu.curtin.app.Model.Borders.rightBotBorder;
 import edu.curtin.app.Model.Borders.rightTopBorder;
 import edu.curtin.app.Model.Doors.HorizontalDoor;
 import edu.curtin.app.Model.Doors.VerticalDoor;
-import edu.curtin.app.Model.Keys.Keys;
+import edu.curtin.app.Model.Keys.*;
 import edu.curtin.app.Model.Map;
 import edu.curtin.app.Model.Walls.HorizontalWall;
 import edu.curtin.app.Model.Walls.VerticalWall;
@@ -218,7 +218,28 @@ public class App {
                         int yK = Integer.parseInt(splitBy[2]);
                         String keyColor = keyColorFinder(Integer.parseInt(splitBy[3]));
                         appLogger.info("The position of a "+keyColor+" color Key is : \n\tRow = "+xK+" Column = "+yK);
-                        map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new Keys());
+                        switch (Integer.parseInt(splitBy[3])){
+                            case 1 :
+                                map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new RedKey());
+                                break;
+                            case 2 :
+                                map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new GreenKey());
+                                break;
+                            case 3 :
+                                map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new YellowKey());
+                                break;
+                            case 4 :
+                                map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new BlueKey());
+                                break;
+                            case 5 :
+                                map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new MagentaKey());
+                                break;
+                            case 6 :
+                                map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new CyanKey());
+                            default :
+                                map.setMap(adjustRow(xK,"K"),adjustColumn(yK,"K"), new Keys());
+                                break;
+                        }
                         break;
                     case "M" :
                         mCount++;
@@ -258,18 +279,14 @@ public class App {
                 if(map.winCondition()==true){
                     System.out.println("\033[2J");
                     System.out.println("\t\t\033[31mYOU W0N!");
-                    System.out.println("\nThanks for playing the maze game.\nCreated By\t:\tD.V.Seneviratne" +
-                            "\nStudent ID\t:\t20529624 " +
-                            "\nInstitute\t:\tCurtin University/SLIIT International - Sri Lanka ");
+                    exitBanner();
                     break;
                 }else{
                     System.out.println("Please entire your desired move or type 'exit' to close the game");
                     System.out.print("Action : ");
                     String input = sc.next();
                     if(input.equals("exit")){
-                        System.out.println("\nThanks for playing the maze game.\nCreated By\t:\tD.V.Seneviratne" +
-                                "\nStudent ID\t:\t20529624 " +
-                                "\nInstitute\t:\tCurtin University/SLIIT International - Sri Lanka ");
+                        exitBanner();
                         break;
                     }
                     map.move(input);
@@ -296,11 +313,15 @@ public class App {
                 \t's'\t-\t To move SOUTH (down)
                 \t'e'\t-\t To move EAST (left)
                 \t'n'\t-\t To move WEST (right)""");
-        System.out.println("Here is the Legend for the map" +
-                "\n\tP\t-\t Player's current location" +
-                "\n\tE\t-\t END/win location(s)"+
-                "\n\t\u2555\t-\t Keys necessary to open the corresponding color door" +
-                "\n\t\u2592\t-\t Horizontal door that can be opened with the corresponding color key");
+        System.out.println("""
+                Here is the Legend for the map
+                \tP\t-\t Player's current location
+                \tE\t-\t END/win location(s)
+                \t\u2555\t-\t Keys necessary to open the corresponding color door
+                \t\u2592\t-\t Vertical door that can be opened with the corresponding color key
+                \t\u2592\u2592\u2592\t-\t Horizontal door that can be opened with the corresponding color key
+                
+                """);
 
     }
 }

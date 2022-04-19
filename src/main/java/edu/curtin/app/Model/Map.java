@@ -72,8 +72,9 @@ public class Map {
                 if(playerRow==0){
                     System.out.println("Player has moved outside map");
                 }
-                if(map[playerRow-2][playerColumn] instanceof VerticalWall){
+                if(map[playerRow-1][playerColumn] instanceof HorizontalWall){
                     System.out.println("Player has hit a wall");
+                    break;
                 }
                 map[playerRow-2][playerColumn] = map[playerRow][playerColumn];
                 map[playerRow][playerColumn] = null;
@@ -84,8 +85,9 @@ public class Map {
                 if(playerRow==0){
                     System.out.println("Player has moved outside map");
                 }
-                if(map[playerRow+2][playerColumn] instanceof VerticalWall){
+                if(map[playerRow+1][playerColumn] instanceof HorizontalWall){
                     System.out.println("Player has hit a wall");
+                    break;
                 }
                 map[playerRow+2][playerColumn] = map[playerRow][playerColumn];
                 map[playerRow][playerColumn] = null;
@@ -96,8 +98,9 @@ public class Map {
                 if(playerRow==0){
                     System.out.println("Player has moved outside map");
                 }
-                if(map[playerRow-4][playerColumn] instanceof VerticalWall){
+                if(map[playerRow][playerColumn-2] instanceof VerticalWall){
                     System.out.println("Player has hit a wall");
+                    break;
                 }
                 map[playerRow][playerColumn-4] = map[playerRow][playerColumn];
                 map[playerRow][playerColumn] = null;
@@ -108,8 +111,9 @@ public class Map {
                 if(playerRow==0){
                     System.out.println("Player has moved outside map");
                 }
-                if(map[playerRow+4][playerColumn] instanceof VerticalWall){
+                if(map[playerRow][playerColumn+2] instanceof VerticalWall){
                     System.out.println("Player has hit a wall");
+                    break;
                 }
                 map[playerRow][playerColumn+4] = map[playerRow][playerColumn];
                 map[playerRow][playerColumn] = null;
