@@ -353,6 +353,8 @@ public class App {
                     map.move(input);
                     System.out.println("\033[2J");
                     System.out.println(map.display());
+                    System.out.println(map.displayKeyList());
+                    //System.out.println("\033[2J");
                 }
 
             }

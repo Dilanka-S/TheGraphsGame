@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 
 public class Map {
     public Cell[][] map;
+    public ArrayList<String> keyList = new ArrayList<>();
     private int playerRow;
     private int playerColumn;
     private int endColumn;
@@ -83,8 +84,13 @@ public class Map {
                     }else if(map[playerRow-1][playerColumn] instanceof HorizontalWall){
                         throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
                     }else if(map[playerRow-2][playerColumn] instanceof Keys){
-                        System.out.println("You have obtained a key");
-                        logger.info("Player has obtained a key at ["+(playerRow-2)+","+playerColumn+"]");
+                        String key = String.valueOf(map[playerRow-2][playerColumn]);
+                        //System.out.println(keyCodeFinder(key));
+                        key = keyCodeFinder(key);
+                        //System.out.println(key);
+                        keysList(key);
+                        System.out.println("You have obtained a "+key+" key");
+                        logger.info("Player has obtained a "+key+" key at ["+(playerRow-2)+","+playerColumn+"]");
                     }
                     map[playerRow-2][playerColumn] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
@@ -97,9 +103,11 @@ public class Map {
                     } else if(map[playerRow+1][playerColumn] instanceof HorizontalWall){
                         throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
                     } else if(map[playerRow+2][playerColumn] instanceof Keys){
-                        System.out.println("You have obtained a key");
-                        logger.info("Player has obtained a key at ["+(playerRow+2)+","+playerColumn+"]");
-
+                        String key = String.valueOf(map[playerRow+2][playerColumn]);
+                        key = keyCodeFinder(key);
+                        keysList(key);
+                        System.out.println("You have obtained a "+key+" key");
+                        logger.info("Player has obtained a "+key+" key at ["+(playerRow+2)+","+playerColumn+"]");
                     }
                     map[playerRow+2][playerColumn] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
@@ -112,8 +120,11 @@ public class Map {
                     } else if(map[playerRow][playerColumn-2] instanceof VerticalWall){
                         throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
                     } else if(map[playerRow][playerColumn-4] instanceof Keys){
-                        System.out.println("You have obtained a key");
-                        logger.info("Player has obtained a key at ["+playerRow+","+(playerColumn-4)+"]");
+                        String key = String.valueOf(map[playerRow][playerColumn-4]);
+                        key = keyCodeFinder(key);
+                        keysList(key);
+                        System.out.println("You have obtained a "+key+" key");
+                        logger.info("Player has obtained a "+key+" key at ["+playerRow+","+(playerColumn-4)+"]");
 
                     }
                     map[playerRow][playerColumn-4] = map[playerRow][playerColumn];
@@ -127,8 +138,11 @@ public class Map {
                     } else if(map[playerRow][playerColumn+2] instanceof VerticalWall){
                         throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
                     } else if(map[playerRow][playerColumn+4] instanceof Keys){
-                        System.out.println("You have obtained a key");
-                        logger.info("Player has obtained a key at ["+playerRow+","+(playerColumn+4)+"]");
+                        String key = String.valueOf(map[playerRow][playerColumn+4]);
+                        key = keyCodeFinder(key);
+                        keysList(key);
+                        System.out.println("You have obtained a "+key+" key");
+                        logger.info("Player has obtained a "+key+" key at ["+playerRow+","+(playerColumn+4)+"]");
 
                     }
                     map[playerRow][playerColumn+4] = map[playerRow][playerColumn];
@@ -141,8 +155,6 @@ public class Map {
                     break;
 
             }
-
-
         }catch (MazeException mazeException){
             System.out.println("Invalid move : "+mazeException.getMessage());
         }
@@ -154,10 +166,24 @@ public class Map {
         return win;
     }
     public ArrayList<String> keysList(String key){
-        ArrayList<String> keyList = new ArrayList<>();
         keyList.add(key);
+        //System.out.println("The Player has these keys : "+ keyList);
         return keyList;
     }
-
+    public String displayKeyList(){
+        return "> You currently have these keys : "+keyList;
+    }
+    private static String keyCodeFinder(String colorCode){
+        //An enhanced switch case suggested by IntelliJ
+        return switch (colorCode) {
+            case "\033[31m\u2555\033[m" -> "Red";
+            case "\033[32m\u2555\033[m" -> "Green";
+            case "\033[33m\u2555\033[m" -> "Yellow";
+            case "\033[34m\u2555\033[m" -> "Blue";
+            case "\033[35m\u2555\033[m" -> "Magenta";
+            case "\033[36m\u2555\033[m" -> "Cyan";
+            default -> null;
+        };
+    }
 
 }
