@@ -143,13 +143,10 @@ public class App {
             //Reading map size
             int rowNum = fileScanner.nextInt();
             int colNum = fileScanner.nextInt();
-            int actCols = (3*rowNum)+(rowNum+1);
-            int actRows = ((2*colNum)+1);
+            int actCols = (3*colNum)+(colNum+1);
+            int actRows = ((2*rowNum)+1);
             //System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
             edu.curtin.app.Model.Map map = new Map(actRows,actCols);
-
-            //Putting borders
-            //map = insertBorders(map,actCols,actRows);
 
             //System.out.println("\nrowNum is : "+rowNum+ "\tcolNum is : " +colNum);
             appLogger.info("Size of the map is : "+rowNum+ " x " +colNum);
@@ -275,11 +272,12 @@ public class App {
             appLogger.info(" > Total number of Keys : "+kCount);
 
             //System.out.println("\033[2J");
+            //Inserting Borders
             map = insertBorders(map,actCols,actRows);
             System.out.println(map.display());
 
             while(true){
-                if(map.winCondition()==true){
+                if(map.winCondition()){
                     System.out.println("\033[2J");
                     System.out.println("\t\t\033[31mYOU W0N!");
                     exitBanner();

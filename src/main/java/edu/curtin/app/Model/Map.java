@@ -115,6 +115,8 @@ public class Map {
                     System.out.println("Player has moved outside map");
                 } else if(map[playerRow][playerColumn+2] instanceof VerticalWall){
                     throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
+                } else if(map[playerRow][playerColumn-4] instanceof Keys){
+                System.out.println("You have obtained a key");
                 }
                 map[playerRow][playerColumn+4] = map[playerRow][playerColumn];
                 map[playerRow][playerColumn] = null;
