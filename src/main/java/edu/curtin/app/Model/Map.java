@@ -1,5 +1,6 @@
 package edu.curtin.app.Model;
 
+import edu.curtin.app.Exceptions.DoorAccessException;
 import edu.curtin.app.Exceptions.HitHorizontalWall;
 import edu.curtin.app.Exceptions.HitVerticalWall;
 import edu.curtin.app.Exceptions.MazeException;
@@ -7,6 +8,8 @@ import edu.curtin.app.Model.Borders.botIntersection;
 import edu.curtin.app.Model.Borders.leftIntersection;
 import edu.curtin.app.Model.Borders.rightIntersection;
 import edu.curtin.app.Model.Borders.topIntersection;
+import edu.curtin.app.Model.Doors.HorizontalDoor;
+import edu.curtin.app.Model.Doors.VerticalDoor;
 import edu.curtin.app.Model.Keys.Keys;
 import edu.curtin.app.Model.Walls.HorizontalWall;
 import edu.curtin.app.Model.Walls.VerticalWall;
@@ -91,6 +94,16 @@ public class Map {
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
                         logger.info("Player has obtained a "+key+" key at ["+(playerRow-2)+","+playerColumn+"]");
+                    }else if(map[playerRow-1][playerColumn] instanceof HorizontalDoor){
+                        //System.out.println("Door is there");
+                        String door = String.valueOf(map[playerRow-1][playerColumn]);
+                        door = doorCodeFinder(door);
+                        if(keyList.contains(door)){
+                            System.out.println("You opened the "+door+" door with the "+door+" key you had!");
+                        }else{
+                            throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue ");
+                        }
                     }
                     map[playerRow-2][playerColumn] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
@@ -108,6 +121,16 @@ public class Map {
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
                         logger.info("Player has obtained a "+key+" key at ["+(playerRow+2)+","+playerColumn+"]");
+                    }else if(map[playerRow+1][playerColumn] instanceof HorizontalDoor){
+                        //System.out.println("Door is there");
+                        String door = String.valueOf(map[playerRow+1][playerColumn]);
+                        door = doorCodeFinder(door);
+                        if(keyList.contains(door)){
+                            System.out.println("You opened the "+door+" door with the "+door+" key you had!");
+                        }else{
+                            throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue ");
+                        }
                     }
                     map[playerRow+2][playerColumn] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
@@ -125,7 +148,16 @@ public class Map {
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
                         logger.info("Player has obtained a "+key+" key at ["+playerRow+","+(playerColumn-4)+"]");
-
+                    }else if(map[playerRow][playerColumn-2] instanceof VerticalDoor){
+                        //System.out.println("Door is there");
+                        String door = String.valueOf(map[playerRow][playerColumn-2]);
+                        door = doorCodeFinder(door);
+                        if(keyList.contains(door)){
+                            System.out.println("You opened the "+door+" door with the "+door+" key you had!");
+                        }else{
+                            throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue ");
+                        }
                     }
                     map[playerRow][playerColumn-4] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
@@ -143,7 +175,16 @@ public class Map {
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
                         logger.info("Player has obtained a "+key+" key at ["+playerRow+","+(playerColumn+4)+"]");
-
+                    }else if(map[playerRow][playerColumn+2] instanceof VerticalDoor){
+                        //System.out.println("Door is there");
+                        String door = String.valueOf(map[playerRow][playerColumn+2]);
+                        door = doorCodeFinder(door);
+                        if(keyList.contains(door)){
+                            System.out.println("You opened the "+door+" door with the "+door+" key you had!");
+                        }else{
+                            throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue ");
+                        }
                     }
                     map[playerRow][playerColumn+4] = map[playerRow][playerColumn];
                     map[playerRow][playerColumn] = null;
@@ -173,7 +214,7 @@ public class Map {
     public String displayKeyList(){
         return "> You currently have these keys : "+keyList;
     }
-    private static String keyCodeFinder(String colorCode){
+    private static String keyCodeFinder(String colorCode) {
         //An enhanced switch case suggested by IntelliJ
         return switch (colorCode) {
             case "\033[31m\u2555\033[m" -> "Red";
@@ -185,5 +226,16 @@ public class Map {
             default -> null;
         };
     }
-
+    private static String doorCodeFinder(String doorColor){
+        //if(doorType.equals("HD"))
+        switch (doorColor) {
+            case "\033[31m\u2592\033[m" -> doorColor = "Red";
+            case "\033[32m\u2592\033[m" -> doorColor = "Green";
+            case "\033[33m\u2592\033[m" -> doorColor = "Yellow";
+            case "\033[34m\u2592\033[m" -> doorColor = "Blue";
+            case "\033[35m\u2592\033[m" -> doorColor = "Magenta";
+            case "\033[36m\u2592\033[m" -> doorColor = "Cyan";
+        }
+        return doorColor;
+    }
 }
