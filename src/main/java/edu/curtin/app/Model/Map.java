@@ -67,15 +67,29 @@ public class Map {
                     if(map[i+1][j+1] instanceof HorizontalWall){
                         setMap(i+1,j,new rightMidIntersection());
                     }
+                    if(map[i+2][j] instanceof VerticalWall){
+                        setMap(i+1,j, new VerticalWall());
+                    }
                 }
             }
         }
         for (int i = 2; i < actualRows-2 ; i+=2) {
-            for (int j = 4; j < actualCols ; j+=4) {
-                //if(map[][])
+            for (int j = 2; j < actualCols ; j+=4) {
+                if(map[i][j] instanceof HorizontalWall){
+                    if(map[i+1][j+2] instanceof VerticalWall){
+                        setMap(i,j+2, new rightMidDownIntersection());
+                    }else if(map[i+1][j-2]instanceof VerticalWall){
+                        setMap(i,j-2, new leftTopBorder());
+                    }if(map[i+1][j+2] instanceof VerticalDoor){
+                        setMap(i,j+2, new rightMidDownIntersection());
+                    }if(map[i-1][j+2] instanceof VerticalWall){
+                        setMap(i,j+2, new rightBotBorder());
+                    }if(map[i-1][j-2] instanceof VerticalDoor){
+                        setMap(i,j-2, new leftBotBorder());
+                    }
+                }
 
             }
-
         }
 
     }

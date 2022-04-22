@@ -138,10 +138,9 @@ public class App {
     public static void playGame(){
         try{
             Scanner sc = new Scanner(System.in);
-            //String filename;
-//            System.out.print("\n> Please enter the name of the metadata file for the map : ");
-//            String filename = sc.nextLine();
-            Scanner fileScanner = new Scanner(new File("sample.txt"));
+            System.out.print("\n> Please enter the name of the metadata file for the map : ");
+            String filename = sc.nextLine();
+            Scanner fileScanner = new Scanner(new File(filename));
             //Reading map size
             int rowNum = fileScanner.nextInt();
             int colNum = fileScanner.nextInt();
