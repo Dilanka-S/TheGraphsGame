@@ -334,6 +334,7 @@ public class App {
             //System.out.println("\033[2J");
             //Inserting Borders
             map = insertBorders(map,actCols,actRows);
+            map.setMidIntersections();
             System.out.println(map.display());
 
             while(true){
@@ -353,9 +354,11 @@ public class App {
                     map.move(input);
                     System.out.println("\033[2J");
                     System.out.println(map.display());
+                    System.out.println(map.warningList.toString());
                     System.out.println(map.displayKeyList());
                     //System.out.println("\033[2J");
                 }
+                map.warningList.clear();
 
             }
             //System.out.println("* while loop finished");

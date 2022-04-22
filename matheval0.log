@@ -1,135 +1,75 @@
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Size of the map is : 4 x 4
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Vertical Wall(1) is : 
 	Row = 0 Column = 1
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Vertical Wall(2) is : 
 	Row = 0 Column = 3
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Vertical Wall(3) is : 
-	Row = 1 Column = 2
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
-INFO: Position of Vertical Wall(4) is : 
 	Row = 1 Column = 3
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
-INFO: Position of Vertical Wall(5) is : 
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
+INFO: Position of Vertical Wall(4) is : 
 	Row = 2 Column = 1
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
-INFO: Position of Vertical Wall(6) is : 
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
+INFO: Position of Vertical Wall(5) is : 
 	Row = 3 Column = 2
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Horizontal Wall(1) is : 
 	Row = 1 Column = 1
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Horizontal Wall(2) is : 
 	Row = 2 Column = 0
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Horizontal Wall(3) is : 
 	Row = 2 Column = 2
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Horizontal Wall(4) is : 
-	Row = 2 Column = 3
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
-INFO: Position of Horizontal Wall(5) is : 
 	Row = 3 Column = 2
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: The Starting Position of the Player is : 
 	Row = 0 Column = 0
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Message(1) is : 
 	Row = 0 Column = 0
 	 
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Message(2) is : 
 	Row = 0 Column = 0
 	 
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of End Point(1) is : 
 	Row = 0 Column = 3
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Message(3) is : 
 	Row = 0 Column = 3
 	 
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Vertical Door(1) is : 
 	Row = 1 Column = 2
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Horizontal Door(1) is : 
 	Row = 2 Column = 3
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: The position of added Green color Key is : 
 	Row = 0 Column = 1
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: The position of added Red color Key is : 
 	Row = 2 Column = 0
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO: Position of Message(4) is : 
 	Row = 3 Column = 2
 	 
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
-INFO:  > Total number of Horizontal Walls : 5
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
-INFO:  > Total number of Vertical Walls : 6
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
+INFO:  > Total number of Horizontal Walls : 4
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
+INFO:  > Total number of Vertical Walls : 5
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO:  > Total number of Horizontal Doors : 1
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO:  > Total number of Vertical Doors : 1
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO:  > Total number of Messages : 4
-Apr 20, 2022 12:47:33 PM edu.curtin.app.App playGame
+Apr 22, 2022 8:30:26 AM edu.curtin.app.App playGame
 INFO:  > Total number of Keys : 0
-Apr 20, 2022 12:47:37 PM edu.curtin.app.Model.Map move
-INFO: Player has moved SOUTH from [1,2] to [3,2]
-Apr 20, 2022 12:47:39 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [3,2] to [3,6]
-Apr 20, 2022 12:47:43 PM edu.curtin.app.Model.Map move
-INFO: Player has moved SOUTH from [3,6] to [5,6]
-Apr 20, 2022 12:47:44 PM edu.curtin.app.Model.Map move
-INFO: Player has moved SOUTH from [5,6] to [7,6]
-Apr 20, 2022 12:47:47 PM edu.curtin.app.Model.Map move
-INFO: Player has moved WEST from [7,6] to [7,2]
-Apr 20, 2022 12:47:49 PM edu.curtin.app.Model.Map move
-INFO: Player has obtained a Red key at [5,2]
-Apr 20, 2022 12:47:49 PM edu.curtin.app.Model.Map move
-INFO: Player has moved NORTH from [7,2] to [5,2]
-Apr 20, 2022 12:47:50 PM edu.curtin.app.Model.Map move
-INFO: Player has moved SOUTH from [5,2] to [7,2]
-Apr 20, 2022 12:47:51 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [7,2] to [7,6]
-Apr 20, 2022 12:47:56 PM edu.curtin.app.Model.Map move
-INFO: Player has moved NORTH from [7,6] to [5,6]
-Apr 20, 2022 12:48:00 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [5,6] to [5,10]
-Apr 20, 2022 12:48:02 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [5,10] to [5,14]
-Apr 20, 2022 12:48:05 PM edu.curtin.app.Model.Map move
-INFO: Player has moved WEST from [5,14] to [5,10]
-Apr 20, 2022 12:48:06 PM edu.curtin.app.Model.Map move
-INFO: Player has moved WEST from [5,10] to [5,6]
-Apr 20, 2022 12:48:08 PM edu.curtin.app.Model.Map move
-INFO: Player has moved NORTH from [5,6] to [3,6]
-Apr 20, 2022 12:48:09 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [3,6] to [3,10]
-Apr 20, 2022 12:48:11 PM edu.curtin.app.Model.Map move
-INFO: Player has moved NORTH from [3,10] to [1,10]
-Apr 20, 2022 12:48:19 PM edu.curtin.app.Model.Map move
-INFO: Player has obtained a Green key at [1,6]
-Apr 20, 2022 12:48:19 PM edu.curtin.app.Model.Map move
-INFO: Player has moved WEST from [1,10] to [1,6]
-Apr 20, 2022 12:48:21 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [1,6] to [1,10]
-Apr 20, 2022 12:48:24 PM edu.curtin.app.Model.Map move
-INFO: Player has moved SOUTH from [1,10] to [3,10]
-Apr 20, 2022 12:48:26 PM edu.curtin.app.Model.Map move
-INFO: Player has moved WEST from [3,10] to [3,6]
-Apr 20, 2022 12:48:29 PM edu.curtin.app.Model.Map move
-INFO: Player has moved SOUTH from [3,6] to [5,6]
-Apr 20, 2022 12:48:31 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [5,6] to [5,10]
-Apr 20, 2022 12:48:34 PM edu.curtin.app.Model.Map move
-INFO: Player has moved EAST from [5,10] to [5,14]
-Apr 20, 2022 12:48:36 PM edu.curtin.app.Model.Map move
-INFO: Player has moved NORTH from [5,14] to [3,14]
-Apr 20, 2022 12:48:39 PM edu.curtin.app.Model.Map move
-INFO: Player has moved NORTH from [3,14] to [1,14]

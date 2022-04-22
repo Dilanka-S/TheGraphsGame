@@ -4,10 +4,7 @@ import edu.curtin.app.Exceptions.DoorAccessException;
 import edu.curtin.app.Exceptions.HitHorizontalWall;
 import edu.curtin.app.Exceptions.HitVerticalWall;
 import edu.curtin.app.Exceptions.MazeException;
-import edu.curtin.app.Model.Borders.botIntersection;
-import edu.curtin.app.Model.Borders.leftIntersection;
-import edu.curtin.app.Model.Borders.rightIntersection;
-import edu.curtin.app.Model.Borders.topIntersection;
+import edu.curtin.app.Model.Borders.*;
 import edu.curtin.app.Model.Doors.HorizontalDoor;
 import edu.curtin.app.Model.Doors.VerticalDoor;
 import edu.curtin.app.Model.Keys.Keys;
@@ -20,6 +17,7 @@ import java.util.logging.Logger;
 public class Map {
     public Cell[][] map;
     public ArrayList<String> keyList = new ArrayList<>();
+    public ArrayList<String> warningList = new ArrayList<>();
     private int playerRow;
     private int playerColumn;
     private int endColumn;
@@ -62,6 +60,25 @@ public class Map {
             }
         }
     }
+    public void setMidIntersections(){
+        for (int i = 1; i < actualRows-2 ; i+=2) {
+            for (int j = 4; j < actualCols-1; j+=4) {
+                if(map[i][j] instanceof VerticalWall){
+                    if(map[i+1][j+1] instanceof HorizontalWall){
+                        setMap(i+1,j,new rightMidIntersection());
+                    }
+                }
+            }
+        }
+        for (int i = 2; i < actualRows-2 ; i+=2) {
+            for (int j = 4; j < actualCols ; j+=4) {
+                //if(map[][])
+
+            }
+
+        }
+
+    }
    // @Override
     public String display(){
         //System.out.println("map length is : "+map.length+"\n");
@@ -84,7 +101,9 @@ public class Map {
                 case "n" :
                     if(playerRow==0){
                         System.out.println("Player has moved outside map");
+                        warningList.add("\033[31mPlayer has moved outside map\033[m");
                     }else if(map[playerRow-1][playerColumn] instanceof HorizontalWall){
+                        warningList.add("\033[31mYou bumped into a Horizontal Wall next to you\033[m!");
                         throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
                     }else if(map[playerRow-2][playerColumn] instanceof Keys){
                         String key = String.valueOf(map[playerRow-2][playerColumn]);
@@ -93,6 +112,7 @@ public class Map {
                         //System.out.println(key);
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
+                        warningList.add("\033[32mYou have obtained a "+key+" key\033[m");
                         logger.info("Player has obtained a "+key+" key at ["+(playerRow-2)+","+playerColumn+"]");
                     }else if(map[playerRow-1][playerColumn] instanceof HorizontalDoor){
                         //System.out.println("Door is there");
@@ -100,7 +120,10 @@ public class Map {
                         door = doorCodeFinder(door);
                         if(keyList.contains(door)){
                             System.out.println("You opened the "+door+" door with the "+door+" key you had!");
+                            warningList.add("\033[33mYou opened the "+door+" door with the "+door+" key you had!\033[m");
                         }else{
+                            warningList.add("\033[31mYou don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue\033[m");
                             throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
                                     ""+door+" colored key to continue ");
                         }
@@ -113,13 +136,16 @@ public class Map {
                 case "s" :
                     if(playerRow==0){
                         System.out.println("Player has moved outside map");
+                        warningList.add("\033[31mPlayer has moved outside map\033[m");
                     } else if(map[playerRow+1][playerColumn] instanceof HorizontalWall){
+                        warningList.add("\033[31mYou bumped into a Horizontal Wall next to you\033[m!");
                         throw new HitHorizontalWall("You bumped into a Horizontal Wall next to you!");
                     } else if(map[playerRow+2][playerColumn] instanceof Keys){
                         String key = String.valueOf(map[playerRow+2][playerColumn]);
                         key = keyCodeFinder(key);
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
+                        warningList.add("\033[32mYou have obtained a "+key+" key\033[m");
                         logger.info("Player has obtained a "+key+" key at ["+(playerRow+2)+","+playerColumn+"]");
                     }else if(map[playerRow+1][playerColumn] instanceof HorizontalDoor){
                         //System.out.println("Door is there");
@@ -127,7 +153,10 @@ public class Map {
                         door = doorCodeFinder(door);
                         if(keyList.contains(door)){
                             System.out.println("You opened the "+door+" door with the "+door+" key you had!");
+                            warningList.add("\033[33mYou opened the "+door+" door with the "+door+" key you had!\033[m");
                         }else{
+                            warningList.add("\033[31mYou don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue\033[m");
                             throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
                                     ""+door+" colored key to continue ");
                         }
@@ -140,21 +169,27 @@ public class Map {
                 case "w" :
                     if(playerRow==0){
                         System.out.println("Player has moved outside map");
+                        warningList.add("\033[31mPlayer has moved outside map\033[m");
                     } else if(map[playerRow][playerColumn-2] instanceof VerticalWall){
+                        warningList.add("\033[31mYou bumped into a Vertical Wall next to you\033[m!");
                         throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
                     } else if(map[playerRow][playerColumn-4] instanceof Keys){
                         String key = String.valueOf(map[playerRow][playerColumn-4]);
                         key = keyCodeFinder(key);
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
+                        warningList.add("\033[32mYou have obtained a "+key+" key\033[m");
                         logger.info("Player has obtained a "+key+" key at ["+playerRow+","+(playerColumn-4)+"]");
                     }else if(map[playerRow][playerColumn-2] instanceof VerticalDoor){
                         //System.out.println("Door is there");
                         String door = String.valueOf(map[playerRow][playerColumn-2]);
                         door = doorCodeFinder(door);
                         if(keyList.contains(door)){
+                            warningList.add("\033[33mYou opened the "+door+" door with the "+door+" key you had!\033[m");
                             System.out.println("You opened the "+door+" door with the "+door+" key you had!");
                         }else{
+                            warningList.add("\033[31mYou don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue\033[m");
                             throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
                                     ""+door+" colored key to continue ");
                         }
@@ -167,21 +202,27 @@ public class Map {
                 case "e" :
                     if(playerRow==0){
                         System.out.println("Player has moved outside map");
+                        warningList.add("\033[31mPlayer has moved outside map\033[m");
                     } else if(map[playerRow][playerColumn+2] instanceof VerticalWall){
+                        warningList.add("\033[31mYou bumped into a Vertical Wall next to you\033[m!");
                         throw new HitVerticalWall("You bumped into a Vertical Wall next to you!");
                     } else if(map[playerRow][playerColumn+4] instanceof Keys){
                         String key = String.valueOf(map[playerRow][playerColumn+4]);
                         key = keyCodeFinder(key);
                         keysList(key);
                         System.out.println("You have obtained a "+key+" key");
+                        warningList.add("\033[32mYou have obtained a "+key+" key\033[m");
                         logger.info("Player has obtained a "+key+" key at ["+playerRow+","+(playerColumn+4)+"]");
                     }else if(map[playerRow][playerColumn+2] instanceof VerticalDoor){
                         //System.out.println("Door is there");
                         String door = String.valueOf(map[playerRow][playerColumn+2]);
                         door = doorCodeFinder(door);
                         if(keyList.contains(door)){
+                            warningList.add("\033[33mYou opened the "+door+" door with the "+door+" key you had!\033[m");
                             System.out.println("You opened the "+door+" door with the "+door+" key you had!");
                         }else{
+                            warningList.add("\033[31mYou don't have access to this "+door+" door. Please obtain a " +
+                                    ""+door+" colored key to continue\033[m");
                             throw new DoorAccessException("You don't have access to this "+door+" door. Please obtain a " +
                                     ""+door+" colored key to continue ");
                         }
@@ -238,4 +279,5 @@ public class Map {
         }
         return doorColor;
     }
+
 }
