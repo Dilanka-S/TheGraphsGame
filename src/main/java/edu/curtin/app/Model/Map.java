@@ -32,13 +32,19 @@ public class Map {
         actualCols = cols;
     }
     public void setMap(int x,int y, Cell cellObj){
-        map[x][y] = cellObj;
-        if (cellObj instanceof Player){
+        if (map[x][y] instanceof Player){
+            map[x][y] = new Player();
+        }else if(cellObj instanceof Player ) {
+            //map[x][y] = null;
+            map[x][y] = cellObj;
             playerRow = x;
             playerColumn = y;
         }else if (cellObj instanceof End){
+            map[x][y] = cellObj;
             endRow = x;
             endColumn = y;
+        }else {
+            map[x][y] = cellObj;
         }
     }
     public void setIntersections(int actualRows,int actualCols){
@@ -91,7 +97,20 @@ public class Map {
 
             }
         }
-
+        for (int i = 1; i < actualRows-2 ; i+=2) {
+            for (int j = 4; j < actualCols-1; j+=4) {
+                if(map[i][j] instanceof VerticalWall){
+                    if(map[i+1][j+1] instanceof HorizontalWall){
+                        if (map[i+1][j-1] instanceof HorizontalWall){
+                            if (map[i+2][j] instanceof VerticalWall){
+                                //System.out.println("Testing mid 4 way"+String.valueOf("\u253c"));
+                                setMap(i+1,j, new fourWayIntersection());
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
    // @Override
     public String display(){
@@ -111,6 +130,7 @@ public class Map {
     }
     public void move(String input) throws HitVerticalWall, HitHorizontalWall {
         try{
+            System.out.println("Player location is : "+playerRow+","+playerColumn);
             switch (input){
                 case "n" :
                     if(playerRow==0){
@@ -247,6 +267,7 @@ public class Map {
                     playerColumn = playerColumn+4;
                     break;
                 default:
+                    warningList.add("Invalid move");
                     System.err.println("Invalid move");
                     break;
 
@@ -283,6 +304,7 @@ public class Map {
     }
     private static String doorCodeFinder(String doorColor){
         //if(doorType.equals("HD"))
+        //An enhanced switch case suggested by IntelliJ
         switch (doorColor) {
             case "\033[31m\u2592\033[m" -> doorColor = "Red";
             case "\033[32m\u2592\033[m" -> doorColor = "Green";

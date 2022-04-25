@@ -1,0 +1,56 @@
+5 7
+DV 0 1 1
+DV 0 6 5
+DV 2 5 3
+DV 4 6 2
+DH 4 6 4
+DH 3 2 6
+DH 4 2 6
+M 3 2 The same coloured door again! Luckily my one key of that colour didn't just mysteriously disappear. Phew.
+WV 1 1
+WV 1 2 
+WV 2 2
+WV 3 2
+WV 3 3
+WV 4 3
+WH 1 1
+WH 2 1
+WH 3 0
+WH 3 1
+WH 4 1
+S 1 3
+M 1 3 What a wonderful world.
+E 1 6
+M 0 6 The end is nigh.
+E 3 1
+K 3 1 6
+M 3 1 Well done.
+K 1 4 1
+K 1 4 1
+M 1 4 First key!
+M 1 4 Now find the next.
+K 2 1 2
+K 3 5 4
+K 2 6 5
+K 2 6 6
+K 2 6 5
+M 2 6 Got 'em.
+M 2 6 Which way though?
+K 1 1 1
+K 1 1 2
+K 1 1 4
+K 1 1 5
+K 1 1 6
+M 1 1 I have good news and bad news.
+WV 1 4
+WV 1 5
+WV 3 5
+WV 1 6
+WV 2 6
+WV 3 6
+WH 3 3
+WH 1 3
+WH 1 4
+WH 4 4
+WH 4 5
+WH 2 6

@@ -1,3 +1,8 @@
+/*
+Name        : Dilanka Seneviratne
+CURTIN ID   : 20529624
+SLIIT ID    : IT21120916
+ */
 package edu.curtin.app;
 
 import edu.curtin.app.Exceptions.MazeException;
@@ -25,9 +30,9 @@ public class App {
         try{
             //Welcome message
             System.out.println("+ -------------------- +");
-            System.out.println("|       WELCOME TO     |");
+            System.out.println("|       \033[33mWELCOME TO     |");
             System.out.println("|          THE         |");
-            System.out.println("|       \033[31mMAZE \033[32mGAME!\033[m     |");
+            System.out.println("|       \033[31mMAZE \033[31mGAME!\033[m     |");
             System.out.println("+ -------------------- +\n");
 
             //Allowing the program to be tested with different files through the CLI
@@ -40,35 +45,34 @@ public class App {
                         \t2. Play the Maze Game
                         \t3. Exit""");
                 System.out.print("Your selection : ");
-                int menuSelection = sc.nextInt();
-                switch (menuSelection){
-                    case 1 :
-                        instructionsBanner();
-                        break;
-                    case 2 :
+                String menuSelection = sc.next();
+                //Enhanced Auto Generated switch case by IntelliJ
+                switch (menuSelection) {
+                    case "1" -> instructionsBanner();
+                    case "2" -> {
                         playGame();
                         menuBool = false;
-                        break;
-                    case 3 :
+                    }
+                    case "3" -> {
                         exitBanner();
                         menuBool = false;
-                        break;
-                    default:
-                        System.err.println("Incorrect Menu Selection");
-                        break;
+                    }
+                    default -> System.err.println("Incorrect Menu Selection");
                 }
 
             }
-
-        } catch (Exception mainExceptions){
+        }catch (InputMismatchException inputMismatchException){
+            System.out.println("Incorrect Input Type entered! : "+inputMismatchException.getMessage());
+        }
+        catch (Exception mainExceptions){
             System.err.println("An error has occurred when running the game : "+mainExceptions.getMessage());
         }
-        //System.out.println("Hello world");
-
-        // If you wish to change the name and/or package of the class containing 'main()', you
-        // will also need to update the 'mainClass = ...' line in build.gradle.
-
     }
+    /*
+    METHOD DESCRIPTION :    Used to find the color represented by the input file
+                            so that the logging can be done in a more pleasant
+                            and understandable manner.
+     */
     private static String keyColorFinder(int colorCode){
         //An enhanced switch case suggested by IntelliJ
         return switch (colorCode) {
@@ -81,6 +85,10 @@ public class App {
             default -> null;
         };
     }
+    /*
+    METHOD DESCRIPTION :    Adjusts the rows size mentioned in the input file into
+                            the actually usable map size (eg; 4x4 will be 9x17)
+    */
     private static int adjustRow(int row,String type){
         int adjustedRow=0;
         if(type.equals("WH") || (type.equals("DH"))){
@@ -91,12 +99,15 @@ public class App {
                 if(row==0){
                     adjustedRow=1;
                 }else if(row>0){
-                    adjustedRow = row + 3;
+                        adjustedRow = (row*2)+1;
                 }
         }
-
         return adjustedRow;
     }
+    /*
+    METHOD DESCRIPTION :    Adjusts the columns size mentioned in the input file into
+                        the actually usable map size (eg; 4x4 will be 9x17)
+    */
     private static int adjustColumn(int col, String type){
         int adjustedCol=0;
         if((type.equals("WV") || (type.equals("DV")))){
@@ -106,6 +117,10 @@ public class App {
         }
         return adjustedCol;
     }
+    /*
+    METHOD DESCRIPTION :    Inserts the borders into the map array itself after the
+                            MAP has been initialised.
+    */
     private static Map insertBorders(Map map,int actCols,int actRows){
         for (int i = 0; i < actCols; i++) {
             map.setMap(0,i,new HorizontalWall());
@@ -127,14 +142,22 @@ public class App {
 
         return map;
     }
+    /*
+    METHOD DESCRIPTION :   An exit banner was put in a separate method so that code would not be
+                            duplicated at different exit points.
+    */
     private static void exitBanner(){
         System.out.println("""
 
-                Thanks for playing the maze game.
+                \033[33mThanks for playing the maze game.
                 Created By\t:\tD.V.Seneviratne
                 Student ID\t:\t20529624\s
-                Institute\t:\tCurtin University/SLIIT International - Sri Lanka\s""");
+                Institute\t:\tCurtin University/SLIIT International - Sri Lanka\033[m\s""");
     }
+    /*
+    METHOD DESCRIPTION :    Contains the file reading and value breakdown segements, so that each
+                            item type in the input file can be allocated correctly in the MAP
+    */
     public static void playGame(){
         try{
             Scanner sc = new Scanner(System.in);
@@ -146,7 +169,7 @@ public class App {
             int colNum = fileScanner.nextInt();
             int actCols = (3*colNum)+(colNum+1);
             int actRows = ((2*rowNum)+1);
-            //System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
+            System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
             edu.curtin.app.Model.Map map = new Map(actRows,actCols);
 
             //System.out.println("\nrowNum is : "+rowNum+ "\tcolNum is : " +colNum);
@@ -184,6 +207,7 @@ public class App {
                         int yS = Integer.parseInt(splitBy[2]);
                         appLogger.info("The Starting Position of the Player is : \n\tRow = "+xS+" Column = "+yS);
                         map.setMap(adjustRow(xS,"S"),adjustColumn(yS,"S"), new Player());
+                        System.out.println("Actual location of player is : "+adjustRow(xS,"S")+","+adjustColumn(yS,"S"));
                         break;
                     case "E" :
                         //System.out.println("E");
@@ -337,9 +361,10 @@ public class App {
             System.out.println(map.display());
 
             while(true){
+
                 if(map.winCondition()){
                     System.out.println("\033[2J");
-                    System.out.println("\t\t\033[31mYOU W0N!");
+                    System.out.println("\t\t\033[31mYOU W0N!\033[m");
                     exitBanner();
                     break;
                 }else{
@@ -353,8 +378,8 @@ public class App {
                     map.move(input);
                     System.out.println("\033[2J");
                     System.out.println(map.display());
-                    System.out.println(map.warningList.toString());
                     System.out.println(map.displayKeyList());
+                    System.out.println(map.warningList.toString());
                     //System.out.println("\033[2J");
                 }
                 map.warningList.clear();
@@ -363,16 +388,19 @@ public class App {
             //System.out.println("* while loop finished");
             sc.close();
             fileScanner.close();
-//      }catch (NullPointerException exception){
-//            System.err.println("An error has occurred : " +exception.getMessage());
-
+        //Throwing custom exceptions
+        }catch (FileNotFoundException fileNotFoundException){
+            System.err.println("The file you entered does not exist in the current directory : "+fileNotFoundException.getMessage());
         }catch (MazeException mazeException){
             System.err.println(mazeException.getMessage());
-        }
-        catch(Exception e){
+        }catch(Exception e){
             System.err.println("An error has occurred : "+e.getMessage());
         }
     }
+    /*
+    METHOD DESCRIPTION :    Separate method to print Instructions to the player through the
+                            main menu.
+    */
     private static void instructionsBanner(){
         System.out.println("\033[2J");
         System.out.println("""
