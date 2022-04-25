@@ -169,7 +169,7 @@ public class App {
             int colNum = fileScanner.nextInt();
             int actCols = (3*colNum)+(colNum+1);
             int actRows = ((2*rowNum)+1);
-            System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
+            //System.out.println("actual number of rows : "+actRows+"\nactual number of columns : "+actCols);
             edu.curtin.app.Model.Map map = new Map(actRows,actCols);
 
             //System.out.println("\nrowNum is : "+rowNum+ "\tcolNum is : " +colNum);
@@ -207,7 +207,7 @@ public class App {
                         int yS = Integer.parseInt(splitBy[2]);
                         appLogger.info("The Starting Position of the Player is : \n\tRow = "+xS+" Column = "+yS);
                         map.setMap(adjustRow(xS,"S"),adjustColumn(yS,"S"), new Player());
-                        System.out.println("Actual location of player is : "+adjustRow(xS,"S")+","+adjustColumn(yS,"S"));
+                        //System.out.println("Actual location of player is : "+adjustRow(xS,"S")+","+adjustColumn(yS,"S"));
                         break;
                     case "E" :
                         //System.out.println("E");
@@ -295,6 +295,7 @@ public class App {
                         break;
                     case "K" :
                         //System.out.println("K");
+                        kCount++;
                         int xK = Integer.parseInt(splitBy[1]);
                         int yK = Integer.parseInt(splitBy[2]);
                         String keyColor = keyColorFinder(Integer.parseInt(splitBy[3]));
@@ -347,6 +348,11 @@ public class App {
                 //System.out.println(map);
 
             }
+            //System.out.println("Key Count is  : "+kCount);
+            map.keysArray(kCount);
+            keyAndEndCount(filename,map);
+            //System.out.println(map.displayKeysArray());
+
             appLogger.info(" > Total number of Horizontal Walls : "+whCount);
             appLogger.info(" > Total number of Vertical Walls : "+wvCount);
             appLogger.info(" > Total number of Horizontal Doors : "+dhCount);
@@ -394,7 +400,7 @@ public class App {
         }catch (MazeException mazeException){
             System.err.println(mazeException.getMessage());
         }catch(Exception e){
-            System.err.println("An error has occurred : "+e.getMessage());
+            System.err.println("An error has occurred : "+e.getClass()+e.getMessage());
         }
     }
     /*
@@ -419,5 +425,31 @@ public class App {
                 
                 """);
 
+    }
+    public static void keyAndEndCount(String filename, Map map){
+        try{
+            Scanner fileScanner = new Scanner(new File(filename));
+            int keyCount=0,endCount=0,rowCount=0;
+            while (fileScanner.hasNext()){
+                String line = fileScanner.nextLine();
+                String[] splitBy = line.split(" ");
+                switch (splitBy[0]){
+                    case "K" :
+                        keyCount++;
+                        String color = keyColorFinder(Integer.parseInt(splitBy[3]));
+                        map.setKeysArray(rowCount,adjustRow(Integer.parseInt(splitBy[1]),"K"),
+                                adjustColumn(Integer.parseInt(splitBy[2]),"K"),color);
+                        rowCount++;
+                        break;
+                    case "E" :
+                        endCount++;
+                        break;
+                    default:
+                }
+            }
+            //keysArray = new
+        }catch (Exception exception){
+            System.err.println("Exception : "+exception.getClass()+exception.getMessage());
+        }
     }
 }
