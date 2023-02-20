@@ -1,0 +1,58 @@
+1. General Code Quality & PMD Rules
+    - I have commented in almost every method and tried to give the reader a general idea
+    - My "Sout" testing lines have been left commented as well as, so that a reader can test the
+        values passed upto that point
+    - I haven't violated any PMD rules according to my knowledge.
+    - I would have liked to make the code neater, and broken down the App class into another class or two.
+        But I didn't have enough time due to prevailing situations.
+    - Please note that a lot of the methods and conditions have been modified through IntelliJ IDE suggestions
+    for optimisation and visual appeal. But I assure that I have left my own coding style in most situations.
+2. Appropriate use of containers
+    - The "map" has been initialised with a 2D Cell[][] type array
+    - Arraylists have been used to store data with dynamic quantities
+3. Clear and distinct class/interface/method responsibilities
+    - I've done my best to do the break-down of the above-mentioned.
+    - Around 42 classes have been created. I did that, so I could use "instance of" in certain situations
+        to check for the object types in the specific locations more efficiently.
+    - I would have liked to put the classes in the "Borders" package into one class, and make them work
+        through methods that would return the desired unicode.
+    - Would like to break down the playGame() method a bit more too.
+4. Appropriate use of the Strategy Pattern
+    - The App class containing the main class is accessing data types that are implementing a Cell Interface.
+    - The "Cell" interface is implemented by possible type of data that can be in a cell within the map.
+5. Appropriate use of the Decorator Pattern
+    - For example the "Keys" class is decorated with extended classes that correspond to the necessary colors.
+    - Would have liked to work more on this area, but I have done my best.
+6. Clear and Correct UML
+    - It's drawn accurately and detailed as possible at the time.
+    - Would have like to expand the Borders package but it would have cluttered the diagram and
+        I think have given the general idea of how my code works through other packages.
+
+Other Notes :
+    1. I have taken inspiration from Dr.Shyam's "Mouse&Cheese" example as to the overall structure in some instances
+        of the "Map" and "App" classes.
+        https://github.com/shyam3001/mouse
+        But I personally think I have added my own methods and coding to it so much, that I believe
+        it cannot be said to be directly copying from it.
+    2. My current code needs to have functionality for multiple Ends and messages, and my plan was to implement
+        it the same way I have implemented multiple keys with a separate String[][] containing location and type data.
+    3. I have done version controlling for this project through a private gitHub repo at
+        git@github.com:Dilanka-S/Assignment1-COMP2003.git
+        over a span of a week so that I can show my progress and prove that I, myself have completed this project.
+    4. I really would have liked to complete this assignment since I really found it challenging and rewarding to code.
+        But with the prevailing situation of the country and other commitments didn't allow me the most favorable time
+        span. So I choose to submit this assignment without any late-submission penalties at the point of last modifying
+        this text file (20:38pm - 25.04.2022)
+    5. I hereby state and confirm that this program was compiling and running without
+        any errors at the point of submission in my Mac environment.
+
+
+Name        : Dilanka Vishad Seneviratne
+Curtin ID   : 20529624
+SLIIT ID    : IT21120916
+
+
+
+
+
+

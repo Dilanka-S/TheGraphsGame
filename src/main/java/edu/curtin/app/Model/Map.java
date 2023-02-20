@@ -1,3 +1,13 @@
+/*
+Name        : Dilanka Seneviratne
+CURTIN ID   : 20529624
+SLIIT ID    : IT21120916
+
+References : 1. https://github.com/shyam3001/mouse
+                I taken inspiration from the above mentioned project for certain overrall structures, but
+                I believe that I have done this assignment with my own style.
+ */
+
 package edu.curtin.app.Model;
 
 import edu.curtin.app.Exceptions.DoorAccessException;
@@ -15,10 +25,11 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class Map {
+    //Data containers and variable initialisation
     public Cell[][] map;
     public String[][] keysArray;
     public int keyRows;
-    public Cell[][] endArray;
+    public String[][] endArray;
     public ArrayList<String> keyList = new ArrayList<>();
     public ArrayList<String> warningList = new ArrayList<>();
     private int playerRow;
@@ -61,7 +72,11 @@ public class Map {
     public void setMap(int x,int y, Cell cellObj){
         if (map[x][y] instanceof Player){
             map[x][y] = new Player();
-        }else if(cellObj instanceof Player ) {
+        }
+        if(map[x][y] instanceof End){
+            map[x][y] = new End();
+        }
+        else if(cellObj instanceof Player ) {
             //map[x][y] = null;
             map[x][y] = cellObj;
             playerRow = x;
@@ -363,6 +378,7 @@ public class Map {
         boolean win=false;
         //simplified if condition with IntelliJ
         win = (playerRow == endRow) && (playerColumn == endColumn);
+//w
         return win;
     }
     public ArrayList<String> keysList(String key){

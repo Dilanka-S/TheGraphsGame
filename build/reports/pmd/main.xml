@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.43.0" timestamp="2022-05-03T16:13:04.752">
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/App.java">
+<violation beginline="39" endline="39" begincolumn="21" endcolumn="22" rule="CloseResource" ruleset="Error Prone" package="edu.curtin.app" class="App" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this InputStream object are closed after use
+</violation>
+<violation beginline="67" endline="67" begincolumn="16" endcolumn="24" rule="AvoidCatchingGenericException" ruleset="Design" package="edu.curtin.app" class="App" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+</violation>
+<violation beginline="163" endline="163" begincolumn="21" endcolumn="22" rule="CloseResource" ruleset="Error Prone" package="edu.curtin.app" class="App" method="playGame" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this InputStream object are closed after use
+</violation>
+<violation beginline="166" endline="166" begincolumn="21" endcolumn="31" rule="CloseResource" ruleset="Error Prone" package="edu.curtin.app" class="App" method="playGame" variable="fileScanner" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this Scanner object are closed after use
+</violation>
+<violation beginline="173" endline="173" begincolumn="13" endcolumn="36" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary use of fully qualified name 'edu.curtin.app.Model.Map' due to existing import 'edu.curtin.app.Model.*'
+</violation>
+<violation beginline="176" endline="176" begincolumn="13" endcolumn="73" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="191" endline="191" begincolumn="25" endcolumn="117" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="199" endline="199" begincolumn="25" endcolumn="119" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="208" endline="208" begincolumn="25" endcolumn="112" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="217" endline="217" begincolumn="25" endcolumn="110" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="225" endline="225" begincolumn="25" endcolumn="119" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="269" endline="269" begincolumn="25" endcolumn="117" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="302" endline="302" begincolumn="25" endcolumn="121" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="340" endline="340" begincolumn="25" endcolumn="123" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="356" endline="356" begincolumn="13" endcolumn="76" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="357" endline="357" begincolumn="13" endcolumn="74" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="358" endline="358" begincolumn="13" endcolumn="76" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="359" endline="359" begincolumn="13" endcolumn="74" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="360" endline="360" begincolumn="13" endcolumn="67" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="361" endline="361" begincolumn="13" endcolumn="63" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="402" endline="402" begincolumn="16" endcolumn="24" rule="AvoidCatchingGenericException" ruleset="Design" package="edu.curtin.app" class="App" method="playGame" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+</violation>
+<violation beginline="431" endline="431" begincolumn="21" endcolumn="31" rule="CloseResource" ruleset="Error Prone" package="edu.curtin.app" class="App" method="keyAndEndCount" variable="fileScanner" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this Scanner object are closed after use
+</violation>
+<violation beginline="432" endline="432" begincolumn="28" endcolumn="35" rule="UnusedLocalVariable" ruleset="Best Practices" package="edu.curtin.app" class="App" method="keyAndEndCount" variable="endCount" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'endCount'.
+</violation>
+<violation beginline="432" endline="432" begincolumn="17" endcolumn="24" rule="UnusedLocalVariable" ruleset="Best Practices" package="edu.curtin.app" class="App" method="keyAndEndCount" variable="keyCount" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'keyCount'.
+</violation>
+<violation beginline="451" endline="451" begincolumn="17" endcolumn="25" rule="AvoidCatchingGenericException" ruleset="Design" package="edu.curtin.app" class="App" method="keyAndEndCount" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Exceptions/DoorAccessException.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Exceptions" class="DoorAccessException" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Exceptions/HitHorizontalWall.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Exceptions" class="HitHorizontalWall" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Exceptions/HitVerticalWall.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Exceptions" class="HitVerticalWall" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Exceptions/MazeException.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Exceptions" class="MazeException" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/botIntersection.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="botIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="botIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'botIntersection' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/fourWayIntersection.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="fourWayIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="fourWayIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'fourWayIntersection' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/leftBotBorder.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="leftBotBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="leftBotBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'leftBotBorder' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/leftIntersection.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="leftIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="leftIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'leftIntersection' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/leftTopBorder.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="leftTopBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="leftTopBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'leftTopBorder' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/rightBotBorder.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightBotBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightBotBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'rightBotBorder' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/rightIntersection.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'rightIntersection' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/rightMidDownIntersection.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightMidDownIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightMidDownIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'rightMidDownIntersection' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/rightMidIntersection.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightMidIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightMidIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'rightMidIntersection' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/rightTopBorder.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightTopBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="rightTopBorder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'rightTopBorder' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Borders/topIntersection.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="36" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="topIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="10" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model.Borders" class="topIntersection" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#classnamingconventions" priority="1">
+The class name 'topIntersection' doesn't match '[A-Z][a-zA-Z0-9]*'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Cell.java">
+<violation beginline="2" endline="2" begincolumn="9" endcolumn="28" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model" class="Cell" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/HorizontalDoor.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="34" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors" class="HorizontalDoor" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/HorizontalDoors/BlueHD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="50" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.HorizontalDoors" class="BlueHD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/HorizontalDoors/CyanHD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="50" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.HorizontalDoors" class="CyanHD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/HorizontalDoors/GreenHD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="50" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.HorizontalDoors" class="GreenHD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/HorizontalDoors/MagentaHD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="50" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.HorizontalDoors" class="MagentaHD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/HorizontalDoors/RedHD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="50" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.HorizontalDoors" class="RedHD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/HorizontalDoors/YellowHD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="50" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.HorizontalDoors" class="YellowHD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/VerticalDoor.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="34" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors" class="VerticalDoor" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/VerticalDoors/BlueVD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="48" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.VerticalDoors" class="BlueVD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/VerticalDoors/CyanVD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="48" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.VerticalDoors" class="CyanVD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/VerticalDoors/GreenVD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="48" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.VerticalDoors" class="GreenVD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/VerticalDoors/MagentaVD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="48" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.VerticalDoors" class="MagentaVD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/VerticalDoors/RedVD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="48" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.VerticalDoors" class="RedVD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Doors/VerticalDoors/YellowVD.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="48" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Doors.VerticalDoors" class="YellowVD" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/End.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="28" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model" class="End" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Keys/BlueKey.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="BlueKey" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Keys/CyanKey.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="CyanKey" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Keys/GreenKey.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="GreenKey" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Keys/Keys.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="Keys" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="27" rule="UnnecessaryImport" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="Keys" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.ArrayList'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="24" rule="UnnecessaryImport" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="Keys" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.Arrays'
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Keys/MagentaKey.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="MagentaKey" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Keys/RedKey.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="RedKey" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Keys/YellowKey.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="33" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Keys" class="YellowKey" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Map.java">
+<violation beginline="11" endline="11" begincolumn="9" endcolumn="28" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model" class="Map" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+<violation beginline="20" endline="20" begincolumn="1" endcolumn="38" rule="UnnecessaryImport" ruleset="Code Style" package="edu.curtin.app.Model" class="Map" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'edu.curtin.app.Model.Keys.Keys'
+</violation>
+<violation beginline="33" endline="33" begincolumn="12" endcolumn="28" rule="LooseCoupling" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#loosecoupling" priority="3">
+Avoid using implementation types like 'ArrayList'; use the interface instead
+</violation>
+<violation beginline="34" endline="34" begincolumn="12" endcolumn="28" rule="LooseCoupling" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#loosecoupling" priority="3">
+Avoid using implementation types like 'ArrayList'; use the interface instead
+</violation>
+<violation beginline="41" endline="41" begincolumn="33" endcolumn="38" rule="FieldNamingConventions" ruleset="Code Style" package="edu.curtin.app.Model" class="Map" variable="logger" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#fieldnamingconventions" priority="1">
+The constant name 'logger' doesn't match '[A-Z][A-Z_0-9]*'
+</violation>
+<violation beginline="207" endline="220" begincolumn="21" endcolumn="21" rule="ForLoopCanBeForeach" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#forloopcanbeforeach" priority="3">
+This for loop can be replaced by a foreach loop
+</violation>
+<violation beginline="223" endline="223" begincolumn="21" endcolumn="135" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="254" endline="267" begincolumn="21" endcolumn="21" rule="ForLoopCanBeForeach" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#forloopcanbeforeach" priority="3">
+This for loop can be replaced by a foreach loop
+</violation>
+<violation beginline="270" endline="270" begincolumn="21" endcolumn="135" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="301" endline="314" begincolumn="21" endcolumn="21" rule="ForLoopCanBeForeach" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#forloopcanbeforeach" priority="3">
+This for loop can be replaced by a foreach loop
+</violation>
+<violation beginline="317" endline="317" begincolumn="21" endcolumn="134" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="348" endline="361" begincolumn="21" endcolumn="21" rule="ForLoopCanBeForeach" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#forloopcanbeforeach" priority="3">
+This for loop can be replaced by a foreach loop
+</violation>
+<violation beginline="364" endline="364" begincolumn="21" endcolumn="134" rule="GuardLogStatement" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="move" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="378" endline="378" begincolumn="21" endcolumn="25" rule="UnusedAssignment" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="winCondition" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#unusedassignment" priority="3">
+The initializer for variable 'win' is never used (overwritten on line 380)
+</violation>
+<violation beginline="384" endline="384" begincolumn="12" endcolumn="28" rule="LooseCoupling" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="keysList" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#loosecoupling" priority="3">
+Avoid using implementation types like 'ArrayList'; use the interface instead
+</violation>
+<violation beginline="408" endline="415" begincolumn="9" endcolumn="9" rule="SwitchStmtsShouldHaveDefault" ruleset="Best Practices" package="edu.curtin.app.Model" class="Map" method="doorCodeFinder" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#switchstmtsshouldhavedefault" priority="3">
+Switch statements should be exhaustive, add a default case (or missing enum branches)
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Messages.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="28" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model" class="Messages" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Player.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="28" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model" class="Player" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Walls/HorizontalWall.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="34" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Walls" class="HorizontalWall" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+<file name="/Users/dilankaseneviratne/Documents/Curtin/Year 2 Semester 1/COMP 2003/Assignment 1/Assignment1-COMP2003/src/main/java/edu/curtin/app/Model/Walls/VerticalWall.java">
+<violation beginline="1" endline="1" begincolumn="9" endcolumn="34" rule="PackageCase" ruleset="Code Style" package="edu.curtin.app.Model.Walls" class="VerticalWall" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_codestyle.html#packagecase" priority="3">
+Package name contains upper case characters
+</violation>
+</file>
+</pmd>
